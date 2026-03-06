@@ -1,0 +1,107 @@
+/* ============================================================
+   larger.css — Larger screen styles (640px and up)
+   WDD 231 | Demetrious Shoniwa
+   ============================================================ */
+
+@media (min-width: 640px) {
+
+  /* Hide hamburger, show desktop nav */
+  #hamburger { display: none; }
+  #mobile-nav { display: none !important; }
+
+  #main-nav {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+  }
+
+  #main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  #main-nav ul li { display: flex; align-items: stretch; }
+
+  #main-nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  #main-nav ul li a:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  #main-nav ul li a.active {
+    color: #fde68a;
+    border-bottom-color: #f59e0b;
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* Show logo sub-line */
+  .logo-sub { display: block; }
+
+  /* Profile: side by side */
+  .profile-grid {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .avatar { width: 92px; height: 92px; font-size: 2rem; }
+
+  /* Profile layout: 2 columns */
+  .profile-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .photo-body { min-height: 300px; }
+  .photo-placeholder { max-width: 100%; min-height: 260px; }
+
+  /* Overview: row */
+  .overview-cards { flex-direction: row; }
+  .overview-card { flex: 1; }
+
+  /* Course grid */
+  .course-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+
+  /* Footer: horizontal */
+  footer { padding: 1.6rem 2rem; }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+@media (min-width: 900px) {
+
+  .header-inner { height: 62px; }
+
+  main { padding: 2.5rem 2rem 4rem; gap: 3rem; }
+
+  main h1 { font-size: 2.4rem; }
+
+  .profile-layout { grid-template-columns: 2.2fr 1fr; }
+
+  .course-grid { grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); }
+
+  .card-body { padding: 1.6rem 1.8rem; }
+}

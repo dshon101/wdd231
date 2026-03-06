@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normalize.css — Why It Matters</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <span class="tag">WDD 231</span>
+            <h1>Normalize<span class="accent">.css</span></h1>
+            <p class="subtitle">Making browsers play nice — one rule at a time.</p>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="intro">
+            <div class="card">
+                <h2>What is Normalize.css?</h2>
+                <p>
+                    Normalize.css is a small CSS file that provides cross-browser consistency
+                    in the default styling of HTML elements. Rather than stripping all default
+                    styles like a traditional CSS reset, it <strong>preserves useful defaults</strong>
+                    and only corrects the inconsistencies between browsers.
+                </p>
+                <p>
+                    It was created by <strong>Nicolas Gallagher</strong> in 2011 and is used
+                    by major CSS frameworks including Bootstrap and Tailwind CSS.
+                </p>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <h2>Reset vs. Normalize</h2>
+            <div class="cards-grid">
+                <div class="card card--reset">
+                    <div class="card-icon">✕</div>
+                    <h3>CSS Reset</h3>
+                    <p>Strips <em>all</em> default browser styles. You start from a completely blank slate and must
+                        define every style yourself.</p>
+                    <p class="card-note">Created by Eric Meyer, 2007</p>
+                </div>
+                <div class="card card--normalize">
+                    <div class="card-icon">✓</div>
+                    <h3>Normalize.css</h3>
+                    <p>Preserves useful defaults and only targets the styles that need fixing. You keep sensible browser
+                        behavior without rebuilding from scratch.</p>
+                    <p class="card-note">Created by Nicolas Gallagher, 2011</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="why">
+            <h2>Why Does Order Matter?</h2>
+            <div class="card">
+                <p>
+                    When two CSS rules have the same specificity, the one that appears
+                    <strong>last</strong> in the stylesheet wins — this is the cascade.
+                </p>
+                <p>
+                    That's why <code>normalize.css</code> must be linked <em>before</em>
+                    your own CSS files. If it came after, it could override your custom styles
+                    instead of the other way around.
+                </p>
+                <div class="code-block">
+                    <p class="code-label">✅ Correct order in &lt;head&gt;</p>
+                    <pre><code>&lt;link rel="stylesheet" href="styles/normalize.css"&gt;
+&lt;link rel="stylesheet" href="styles/main.css"&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="minify">
+            <h2>What is Minification?</h2>
+            <div class="cards-grid cards-grid--3">
+                <div class="card card--mini">
+                    <div class="card-icon">␣</div>
+                    <h3>Spaces Removed</h3>
+                    <p>All whitespace and indentation is stripped out.</p>
+                </div>
+                <div class="card card--mini">
+                    <div class="card-icon">/* */</div>
+                    <h3>Comments Removed</h3>
+                    <p>Human-readable comments are deleted from the file.</p>
+                </div>
+                <div class="card card--mini">
+                    <div class="card-icon">↵</div>
+                    <h3>Line Breaks Removed</h3>
+                    <p>The entire file is condensed into as few lines as possible.</p>
+                </div>
+            </div>
+            <div class="card card--highlight">
+                <p>The result is a <strong>.min.css</strong> file that is harder for humans to read but
+                    loads faster in the browser — reducing page load time and bandwidth usage.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>WDD 231 &mdash; Web Frontend Development &bull; CSS Normalization Activity</p>
+    </footer>
+
+</body>
+
+</html>

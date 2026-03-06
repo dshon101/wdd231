@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&display=swap');
+
+/* ===========================
+   CSS CUSTOM PROPERTIES
+=========================== */
+:root {
+    --clr-bg: #f5f2eb;
+    --clr-dark: #1a1a18;
+    --clr-accent: #c84b2f;
+    --clr-accent-soft: #f0ddd8;
+    --clr-card: #ffffff;
+    --clr-muted: #6b6860;
+    --clr-border: #ddd9d0;
+    --clr-code-bg: #1a1a18;
+    --clr-code-text: #a8d8a8;
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+
+    --radius: 4px;
+    --max-width: 860px;
+}
+
+/* ===========================
+   BASE
+=========================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-bg);
+    color: var(--clr-dark);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+    background-color: var(--clr-dark);
+    color: #fff;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    border: 1px solid var(--clr-accent);
+    padding: 0.2em 0.7em;
+    border-radius: var(--radius);
+    margin-bottom: 1.2rem;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.accent {
+    color: var(--clr-accent);
+}
+
+.subtitle {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.15rem;
+    color: #b0aca4;
+    margin: 0;
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+section h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 1.2rem;
+    color: var(--clr-dark);
+    border-bottom: 2px solid var(--clr-accent);
+    padding-bottom: 0.4rem;
+    display: inline-block;
+}
+
+/* ===========================
+   CARDS
+=========================== */
+.card {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    padding: 1.8rem 2rem;
+    box-shadow: 2px 3px 0px var(--clr-border);
+}
+
+.card p {
+    margin: 0 0 1rem;
+    color: #3a3830;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+.card strong {
+    color: var(--clr-dark);
+    font-weight: 500;
+}
+
+.card--highlight {
+    background: var(--clr-accent-soft);
+    border-color: var(--clr-accent);
+    margin-top: 1rem;
+}
+
+/* ===========================
+   CARDS GRID
+=========================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.cards-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-icon {
+    font-family: var(--font-mono);
+    font-size: 1.4rem;
+    color: var(--clr-accent);
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+.card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+}
+
+.card-note {
+    font-size: 0.8rem;
+    color: var(--clr-muted);
+    font-style: italic;
+    margin-top: 0.8rem !important;
+}
+
+.card--reset {
+    border-top: 3px solid #888;
+}
+
+.card--normalize {
+    border-top: 3px solid var(--clr-accent);
+}
+
+.card--mini {
+    text-align: center;
+    padding: 1.4rem 1rem;
+}
+
+.card--mini .card-icon {
+    font-size: 1rem;
+    background: var(--clr-dark);
+    color: var(--clr-code-text);
+    display: inline-block;
+    padding: 0.3em 0.6em;
+    border-radius: var(--radius);
+    margin-bottom: 0.8rem;
+}
+
+/* ===========================
+   CODE BLOCK
+=========================== */
+.code-block {
+    margin-top: 1.4rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.code-label {
+    background: #2e2e2a;
+    color: #888;
+    font-size: 0.75rem;
+    padding: 0.4em 1em;
+    margin: 0 !important;
+    letter-spacing: 0.05em;
+}
+
+pre {
+    background: var(--clr-code-bg);
+    margin: 0;
+    padding: 1.2rem 1.4rem;
+    overflow-x: auto;
+}
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--clr-code-text);
+    line-height: 1.8;
+}
+
+p code {
+    background: var(--clr-accent-soft);
+    color: var(--clr-accent);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
+    color: var(--clr-muted);
+    border-top: 1px solid var(--clr-border);
+    font-family: var(--font-mono);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 600px) {
+
+    .cards-grid,
+    .cards-grid--3 {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 2.5rem 1.2rem 2rem;
+    }
+
+    main {
+        padding: 2rem 1rem 3rem;
+        gap: 2.5rem;
+    }
+
+    .card {
+        padding: 1.3rem 1.2rem;
+    }
+}
