@@ -1,0 +1,201 @@
+/* =============================================
+   LUSAKA CHAMBER OF COMMERCE
+   larger.css — Tablet & Desktop (32rem+)
+============================================= */
+
+/* ===== TABLET: 32rem (512px) ===== */
+@media only screen and (min-width: 32rem) {
+
+  /* Header */
+  .header-inner {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.75rem;
+  }
+
+  /* Mobile nav still used at this width */
+
+  /* Hero */
+  .directory-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .directory-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Cards */
+  #directory-container {
+    padding: 1.5rem;
+  }
+
+  /* List view shows more detail at tablet */
+  .list-view .card-detail {
+    font-size: 0.85rem;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    flex: 1 1 240px;
+  }
+
+  .footer-meta {
+    flex: 1 1 200px;
+  }
+
+  .footer-social {
+    flex: 0 0 auto;
+  }
+}
+
+/* ===== DESKTOP: 55rem (880px) ===== */
+@media only screen and (min-width: 55rem) {
+
+  /* Switch to desktop nav, hide hamburger */
+  #hamburger {
+    display: none;
+  }
+
+  #mobile-nav {
+    display: none !important;
+  }
+
+  #main-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  #main-nav ul {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  #main-nav ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+    font-family: var(--font-body);
+  }
+
+  #main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--gold);
+  }
+
+  #main-nav ul li a.active {
+    background-color: var(--gold);
+    color: var(--green-dark);
+    font-weight: 600;
+  }
+
+  /* Header */
+  .header-inner {
+    padding: 0.75rem 2rem;
+  }
+
+  /* Hero */
+  .directory-hero {
+    padding: 4rem 2rem;
+  }
+
+  .directory-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .directory-hero p {
+    font-size: 1.1rem;
+  }
+
+  /* Controls */
+  .directory-controls {
+    padding: 0.75rem 2rem;
+  }
+
+  /* Cards container */
+  #directory-container {
+    padding: 2rem;
+  }
+
+  /* Grid — larger cards on desktop */
+  #directory-container.grid-view {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* List — show description on desktop */
+  .list-view .card-desc {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    margin: 0;
+    flex-basis: 100%;
+  }
+
+  .list-view .card-body {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .list-view .card-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  .list-view .card-right {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-end;
+    font-size: 0.82rem;
+  }
+
+  .list-view .card-img-wrap {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    padding: 0 1rem;
+  }
+}
+
+/* ===== WIDE: 75rem (1200px) ===== */
+@media only screen and (min-width: 75rem) {
+
+  .header-inner,
+  .controls-inner,
+  #directory-container,
+  .footer-inner {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #directory-container.grid-view {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}

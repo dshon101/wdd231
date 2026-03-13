@@ -1,0 +1,84 @@
+{
+  "members": [
+    {
+      "name": "Zambia National Commercial Bank",
+      "address": "Cairo Road, Lusaka CBD, Lusaka 10101",
+      "phone": "+260 211 228 987",
+      "website": "https://www.zanaco.co.zm",
+      "image": "Zanaco-Building-scaled.webp",
+      "membershipLevel": 3,
+      "description": "Zambia's leading commercial bank providing personal and business banking solutions.",
+      "category": "Finance"
+    },
+    {
+      "name": "Shoprite Zambia",
+      "address": "Manda Hill Mall, Great East Road, Lusaka 10101",
+      "phone": "+260 211 257 400",
+      "website": "https://www.shoprite.co.zm",
+      "image": "Shop-right.jpeg",
+      "membershipLevel": 3,
+      "description": "Africa's largest food retailer offering quality groceries and household goods.",
+      "category": "Retail"
+    },
+    {
+      "name": "Sun International Zambia",
+      "address": "Church Road, Lusaka 10101",
+      "phone": "+260 211 257 000",
+      "website": "https://www.suninternational.com",
+      "image": "Sun_International_Zambia.jpg",
+      "membershipLevel": 3,
+      "description": "Premium hotel and entertainment complex in the heart of Lusaka.",
+      "category": "Hospitality"
+    },
+    {
+      "name": "Airtel Zambia",
+      "address": "Stand 4621, Addis Ababa Drive, Lusaka 10101",
+      "phone": "+260 977 000 111",
+      "website": "https://www.airtel.co.zm",
+      "image": "Airtel_Zambia.jpeg",
+      "membershipLevel": 2,
+      "description": "Leading telecommunications provider offering mobile and data services nationwide.",
+      "category": "Telecommunications"
+    },
+    {
+      "name": "Proflight Zambia",
+      "address": "Kenneth Kaunda International Airport, Lusaka 10101",
+      "phone": "+260 211 271 032",
+      "website": "https://www.proflight-zambia.com",
+      "image": "Proflight_Zambia.jpg",
+      "membershipLevel": 2,
+      "description": "Zambia's premier domestic and regional airline connecting key African destinations.",
+      "category": "Aviation"
+    },
+    {
+      "name": "Lusaka Water & Sewerage Company",
+      "address": "Plot 6438, Los Angeles Boulevard, Lusaka 10101",
+      "phone": "+260 211 254 126",
+      "website": "https://www.lwsc.co.zm",
+      "image": "Lusaka_Water_Sewerage_Company.jpg",
+      "membershipLevel": 1,
+      "description": "Providing clean, safe water and sanitation services to Greater Lusaka.",
+      "category": "Utilities"
+    },
+    {
+      "name": "Zambia Sugar PLC",
+      "address": "Kafue Road, Mazabuka (Lusaka Office), Lusaka 10101",
+      "phone": "+260 213 230 466",
+      "website": "https://www.zambiasugar.com",
+      "image": "Zambia_Sugar_PLC.png",
+      "membershipLevel": 2,
+      "description": "One of Africa's largest sugar producers supplying local and export markets.",
+      "category": "Agriculture"
+    },
+    {
+      "name": "Mika Hotels Lusaka",
+      "address": "Plot 2374, Addis Ababa Road, Lusaka 10101",
+      "phone": "+260 211 295 000",
+      "website": "https://www.mikahotels.com",
+      "image": "Mika_Hotels_Lusaka.jpeg",
+      "membershipLevel": 1,
+      "description": "Modern, affordable accommodation and conference facilities in Lusaka.",
+      "category": "Hospitality"
+    }
+  ]
+}

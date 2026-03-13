@@ -1,0 +1,33 @@
+{
+  "family_name": "Shoniwa",
+  "move_in_date": "2023-09-10",
+  "number_of_people": 5,
+  "visited_by_bishopric": true,
+  "family_members": [
+    {
+      "name": "Demetrious Shoniwa",
+      "gender": "Male",
+      "birthdate": "1988-03-22"
+    },
+    {
+      "name": "Grace Shoniwa",
+      "gender": "Female",
+      "birthdate": "1990-07-14"
+    },
+    {
+      "name": "Elijah Shoniwa",
+      "gender": "Male",
+      "birthdate": "2012-05-30"
+    },
+    {
+      "name": "Naomi Shoniwa",
+      "gender": "Female",
+      "birthdate": "2015-11-18"
+    },
+    {
+      "name": "Caleb Shoniwa",
+      "gender": "Male",
+      "birthdate": "2019-02-07"
+    }
+  ]
+}
