@@ -29,8 +29,8 @@
   --shadow-sm:   0 2px 8px rgba(0,0,0,0.08);
   --shadow-md:   0 4px 16px rgba(0,0,0,0.12);
   --radius:      10px;
-  --font-heading: 'Georgia', 'Times New Roman', serif;
-  --font-body:    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Source Sans 3', Segoe UI, Tahoma, sans-serif;
 }
 
 /* ===== BASE ===== */
@@ -105,7 +105,7 @@ header {
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: bold;
-  color: var(--green-dark);
+  color: var(--white);
   line-height: 1;
 }
 
@@ -113,7 +113,7 @@ header {
   font-family: var(--font-heading);
   font-size: 0.6rem;
   font-weight: bold;
-  color: var(--green-dark);
+  color: var(--white);
   line-height: 1;
   letter-spacing: 1px;
 }
@@ -202,10 +202,15 @@ header {
   transition: background-color 0.2s;
 }
 
-#mobile-nav ul li a:hover,
-#mobile-nav ul li a.active {
+#mobile-nav ul li a:hover {
   background-color: rgba(255,255,255,0.1);
   color: var(--gold);
+}
+
+#mobile-nav ul li a.active {
+  background-color: var(--gold);
+  color: var(--green-dark);
+  font-weight: 600;
 }
 
 /* ===== MAIN ===== */
@@ -293,21 +298,7 @@ main {
   margin: 0 auto;
 }
 
-/* ===== GRID VIEW ===== */
-#directory-container.grid-view {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-}
-
-/* ===== LIST VIEW ===== */
-#directory-container.list-view {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-/* ===== MEMBER CARDS — shared base ===== */
+/* ===== GRID & LIST VIEW ===== */
 .member-card {
   background-color: var(--white);
   border-radius: var(--radius);
