@@ -1,40 +1,26 @@
-/* =============================================
-   LUSAKA CHAMBER OF COMMERCE
-   small.css — Mobile First (320px and up)
-   Color Palette:
-     --green-dark:   #1a4731  (Zambian green)
-     --green-mid:    #2d7a4f
-     --green-light:  #e8f5ee
-     --gold:         #c9a84c  (Zambian gold/eagle)
-     --gold-light:   #f5edd8
-     --text-dark:    #1a1a1a
-     --text-mid:     #4a4a4a
-     --text-light:   #f9f9f4
-     --white:        #ffffff
-     --border:       #dde8e2
-============================================= */
-
 /* ===== CSS VARIABLES ===== */
 :root {
-  --green-dark:  #1a4731;
-  --green-mid:   #2d7a4f;
+  --green-dark: #1a4731;
+  --green-mid: #2d7a4f;
   --green-light: #e8f5ee;
-  --gold:        #c9a84c;
-  --gold-light:  #f5edd8;
-  --text-dark:   #1a1a1a;
-  --text-mid:    #4a4a4a;
-  --text-light:  #f9f9f4;
-  --white:       #ffffff;
-  --border:      #dde8e2;
-  --shadow-sm:   0 2px 8px rgba(0,0,0,0.08);
-  --shadow-md:   0 4px 16px rgba(0,0,0,0.12);
-  --radius:      10px;
+  --gold: #c9a84c;
+  --gold-light: #f5edd8;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-light: #f9f9f4;
+  --white: #ffffff;
+  --border: #dde8e2;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --radius: 10px;
   --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body:    'Source Sans 3', Segoe UI, Tahoma, sans-serif;
+  --font-body: 'Source Sans 3', Segoe UI, Tahoma, sans-serif;
 }
 
 /* ===== BASE ===== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -92,7 +78,8 @@ header {
 .brand-logo {
   width: 44px;
   height: 44px;
-  background-color: var(--gold);
+  background-color: var(--green-mid);
+  border: 2px solid var(--gold);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -167,9 +154,11 @@ header {
 #hamburger[aria-expanded="true"] span:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
+
 #hamburger[aria-expanded="true"] span:nth-child(2) {
   opacity: 0;
 }
+
 #hamburger[aria-expanded="true"] span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
@@ -179,7 +168,7 @@ header {
   display: none;
   background-color: var(--green-mid);
   padding: 0.5rem 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #mobile-nav.open {
@@ -203,7 +192,7 @@ header {
 }
 
 #mobile-nav ul li a:hover {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--gold);
 }
 
@@ -478,12 +467,16 @@ footer {
 .footer-brand p {
   font-size: 0.85rem;
   margin: 0.2rem 0;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-brand a {
+  color: var(--text-light);
 }
 
 .footer-meta {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-meta p {
@@ -492,7 +485,7 @@ footer {
 
 .last-modified {
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   font-style: italic;
 }
 
@@ -502,7 +495,7 @@ footer {
 }
 
 .footer-social a {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   transition: color 0.2s;
 }
 
