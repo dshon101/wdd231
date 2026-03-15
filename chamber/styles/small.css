@@ -431,7 +431,8 @@ main {
 }
 
 #directory-container.list-view .card-img-wrap {
-  display: none;
+  width: 70px;
+  height: 70px;
 }
 
 #directory-container.list-view .card-tagline {
@@ -466,7 +467,7 @@ footer {
 .footer-brand p {
   font-size: 0.85rem;
   margin: 0.2rem 0;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .footer-brand a {
@@ -475,7 +476,7 @@ footer {
 
 .footer-meta {
   font-size: 0.85rem;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-meta p {
@@ -494,7 +495,7 @@ footer {
 }
 
 .footer-social a {
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.6);
   transition: color 0.2s;
 }
 
