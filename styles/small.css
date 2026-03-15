@@ -586,7 +586,7 @@ section h2 {
 /* ── FOOTER ── */
 footer {
   background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dk) 100%);
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
   text-align: center;
   padding: 2rem 1.2rem;
   display: flex;
@@ -641,12 +641,12 @@ footer {
 .footer-info p {
   margin: 0;
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
 }
 
 .footer-modified,
 .footer-modified p {
   margin: 0;
   font-size: 0.76rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
 }
