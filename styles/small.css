@@ -15,13 +15,13 @@
   /* Text */
   --clr-text: #1e1b4b;
   --clr-text-soft: #475569;
-  --clr-muted: #94a3b8;
+  --clr-muted: #64748b;
 
   /* Borders */
   --clr-border: #c7d2fe;
 
   /* Status */
-  --clr-done: #059669;
+  --clr-done: #065f46;
   --clr-done-bg: #d1fae5;
   --clr-progress: #7c3aed;
   --clr-progress-bg: #ede9fe;
@@ -176,13 +176,15 @@ header {
   background: var(--clr-primary-dk);
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.32s ease;
+  visibility: hidden;
+  transition: max-height 0.32s ease, visibility 0.32s ease;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
 }
 
 #mobile-nav.open {
   max-height: 240px;
+  visibility: visible;
 }
 
 #mobile-nav ul {
@@ -549,7 +551,11 @@ section h2 {
 }
 
 .course-card.completed .course-code {
-  color: var(--clr-done);
+  color: #065f46;
+}
+
+.course-card.completed .course-credits {
+  color: #065f46;
 }
 
 /* Badges */
@@ -557,7 +563,7 @@ section h2 {
   display: inline-block;
   font-size: 0.68rem;
   font-weight: 700;
-  background: var(--clr-done);
+  background: #065f46;
   color: #fff;
   padding: 0.15em 0.55em;
   border-radius: 1rem;
@@ -586,7 +592,7 @@ section h2 {
 /* ── FOOTER ── */
 footer {
   background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dk) 100%);
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 2rem 1.2rem;
   display: flex;
@@ -641,12 +647,12 @@ footer {
 .footer-info p {
   margin: 0;
   font-size: 0.82rem;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .footer-modified,
 .footer-modified p {
   margin: 0;
   font-size: 0.76rem;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.85);
 }
