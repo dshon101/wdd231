@@ -431,8 +431,7 @@ main {
 }
 
 #directory-container.list-view .card-img-wrap {
-  width: 70px;
-  height: 70px;
+display: none;
 }
 
 #directory-container.list-view .card-tagline {
