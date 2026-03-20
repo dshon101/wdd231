@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lusaka Chamber of Commerce — empowering businesses driving economic growth in Lusaka, Zambia.">
+    <meta name="author" content="Demetrious Shoniwa">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lusaka Chamber of Commerce | Home">
+    <meta property="og:description" content="Empowering businesses driving economic growth in Lusaka, Zambia.">
+    <meta property="og:image" content="https://dshon101.github.io/wdd231/chamber/images/lusaka-chamber-og.jpg">
+    <meta property="og:url" content="https://dshon101.github.io/wdd231/chamber/index.html">
+    <title>Home | Lusaka Chamber of Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-inner">
+            <div class="header-brand">
+                <div class="brand-logo" role="img" aria-label="Lusaka Chamber of Commerce Logo">
+                    <span class="logo-l">L</span>
+                    <span class="logo-cc">CC</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Lusaka Chamber</span>
+                    <span class="brand-tagline">of Commerce &amp; Industry</span>
+                </div>
+            </div>
+
+            <nav id="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+
+            <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div id="mobile-nav" aria-hidden="true">
+            <ul>
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" aria-label="Welcome banner">
+            <div class="hero-content">
+                <h1>Powering Lusaka's Business Community</h1>
+                <p>Connecting entrepreneurs, industry leaders, and innovators across Zambia's capital city.</p>
+                <a href="join.html" class="cta-btn">Join the Chamber Today</a>
+            </div>
+        </section>
+
+        <!-- HOME GRID: Events | Weather | Forecast -->
+        <div class="home-grid">
+
+            <!-- EVENTS -->
+            <section class="home-card events-card" aria-label="Upcoming events">
+                <h2 class="section-label">Events</h2>
+                <div class="events-list">
+                    <article class="event-item">
+                        <p class="event-date">March 25, 2026</p>
+                        <h3 class="event-title">Annual Business Awards Gala</h3>
+                        <p class="event-desc">Celebrate Lusaka's top businesses at the InterContinental Hotel, Cairo
+                            Road. 6:00 PM.</p>
+                    </article>
+                    <article class="event-item">
+                        <p class="event-date">April 3, 2026</p>
+                        <h3 class="event-title">SME Finance Workshop</h3>
+                        <p class="event-desc">Learn funding strategies for small and medium enterprises. ZCAS Conference
+                            Centre. 9:00 AM.</p>
+                    </article>
+                    <article class="event-item">
+                        <p class="event-date">April 18, 2026</p>
+                        <h3 class="event-title">Zambia Trade &amp; Investment Expo</h3>
+                        <p class="event-desc">Connect with local and international investors at the Lusaka Show Grounds.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CURRENT WEATHER -->
+            <section class="home-card weather-card" aria-label="Current weather in Lusaka">
+                <h2 class="section-label">Current Weather</h2>
+                <div class="weather-body">
+                    <div class="weather-main">
+                        <img id="weather-icon" src="" alt="" width="64" height="64">
+                        <div class="weather-temp-wrap">
+                            <span id="weather-temp" class="weather-temp">--</span>
+                            <span id="weather-desc" class="weather-desc">Loading…</span>
+                        </div>
+                    </div>
+                    <ul class="weather-details">
+                        <li><strong>High:</strong> <span id="weather-high">--</span></li>
+                        <li><strong>Low:</strong> <span id="weather-low">--</span></li>
+                        <li><strong>Humidity:</strong> <span id="weather-humidity">--</span></li>
+                        <li><strong>Sunrise:</strong> <span id="weather-sunrise">--</span></li>
+                        <li><strong>Sunset:</strong> <span id="weather-sunset">--</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- WEATHER FORECAST -->
+            <section class="home-card forecast-card" aria-label="3-day weather forecast">
+                <h2 class="section-label">Weather Forecast</h2>
+                <ul id="forecast-list" class="forecast-list">
+                    <li class="forecast-item"><span class="forecast-day">Loading…</span></li>
+                </ul>
+            </section>
+
+        </div><!-- /.home-grid -->
+
+        <!-- SPOTLIGHTS -->
+        <section class="spotlights-section" aria-label="Member spotlights">
+            <h2 class="spotlights-heading">Member Spotlights</h2>
+            <div id="spotlights-container" class="spotlights-grid">
+                <!-- Injected by JavaScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>Lusaka Chamber of Commerce &amp; Industry</strong>
+                <p>Cairo Road, Lusaka CBD, Lusaka 10101, Zambia</p>
+                <p>info@lusakachamber.co.zm &bull; +260 211 228 800</p>
+            </div>
+
+            <div class="footer-meta">
+                <p>Demetrious Shoniwa &bull; WDD 231</p>
+                <p>&copy; <span id="currentYear"></span> Lusaka Chamber of Commerce</p>
+                <p id="lastModified" class="last-modified"></p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Twitter / X Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

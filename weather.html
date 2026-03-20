@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenWeatherMap API Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/weather.css" />
+</head>
+<body>
+
+  <h1>OpenWeatherMap.org API Test</h1>
+
+  <main>
+    <h2 id="town"></h2>
+    <p>
+      The current temperature in Trier, Germany is
+      <span id="current-temp">
+        <span class="loading-pulse"></span>
+      </span>
+    </p>
+
+    <figure>
+      <img id="weather-icon" src="" alt="" />
+      <figcaption></figcaption>
+    </figure>
+  </main>
+
+  <footer>
+    Demetrious Shoniwa &nbsp;|&nbsp; OpenWeatherMap.org &nbsp;|&nbsp; CC BY-SA 4.0 &nbsp;|&nbsp; <a href="https://openweathermap.org/api" target="_blank" rel="noopener">API Documentation</a>
+  </footer>
+
+  <script src="scripts/weather.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+ :root {
+   --sky-top: #0a1628;
+   --sky-mid: #1a3a6e;
+   --sky-glow: #2e6fd4;
+   --gold: #f5c842;
+   --white: #f0f4ff;
+   --muted: #8ba4cc;
+   --card-bg: rgba(255, 255, 255, 0.06);
+   --card-border: rgba(255, 255, 255, 0.12);
+ }
+
+ * {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+ body {
+   min-height: 100vh;
+   background: linear-gradient(160deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-glow) 100%);
+   font-family: 'DM Sans', sans-serif;
+   color: var(--white);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 2rem 1rem;
+   position: relative;
+   overflow: hidden;
+ }
+
+ /* Atmospheric stars */
+ body::before {
+   content: '';
+   position: fixed;
+   inset: 0;
+   background-image:
+     radial-gradient(1px 1px at 15% 20%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
+     radial-gradient(1px 1px at 40% 10%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+     radial-gradient(1px 1px at 70% 25%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
+     radial-gradient(1px 1px at 85% 8%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+     radial-gradient(1px 1px at 55% 35%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+     radial-gradient(1px 1px at 25% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+     radial-gradient(1px 1px at 90% 45%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+     radial-gradient(1.5px 1.5px at 5% 70%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
+     radial-gradient(1px 1px at 60% 60%, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+   pointer-events: none;
+   z-index: 0;
+ }
+
+ h1 {
+   font-family: 'DM Serif Display', serif;
+   font-size: clamp(1.4rem, 4vw, 2.2rem);
+   letter-spacing: 0.01em;
+   color: var(--gold);
+   text-align: center;
+   margin-bottom: 2rem;
+   position: relative;
+   z-index: 1;
+   opacity: 0;
+   animation: fadeSlideDown 0.8s ease forwards;
+ }
+
+ main {
+   background: var(--card-bg);
+   border: 1px solid var(--card-border);
+   backdrop-filter: blur(16px);
+   -webkit-backdrop-filter: blur(16px);
+   border-radius: 20px;
+   padding: 2.5rem 3rem;
+   max-width: 480px;
+   width: 100%;
+   text-align: center;
+   position: relative;
+   z-index: 1;
+   box-shadow: 0 8px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+   opacity: 0;
+   animation: fadeSlideUp 0.8s ease 0.2s forwards;
+ }
+
+ main p {
+   font-size: 1.05rem;
+   color: var(--muted);
+   margin-bottom: 1.5rem;
+   line-height: 1.6;
+ }
+
+ main p span#current-temp {
+   font-family: 'DM Serif Display', serif;
+   font-size: 2rem;
+   color: var(--gold);
+   display: block;
+   margin-top: 0.4rem;
+   letter-spacing: 0.02em;
+   text-shadow: 0 0 30px rgba(245, 200, 66, 0.5);
+   transition: all 0.4s ease;
+ }
+
+ figure {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.5rem;
+   margin-top: 0.5rem;
+ }
+
+ #weather-icon {
+   width: 80px;
+   height: 80px;
+   filter: drop-shadow(0 0 16px rgba(245, 200, 66, 0.6)) brightness(1.2);
+   transition: transform 0.3s ease;
+ }
+
+ #weather-icon:hover {
+   transform: scale(1.1) rotate(-5deg);
+ }
+
+ figcaption {
+   font-size: 0.95rem;
+   color: var(--muted);
+   text-transform: capitalize;
+   letter-spacing: 0.05em;
+ }
+
+ /* Location badge */
+ .location-badge {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.4rem;
+   font-size: 0.78rem;
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   color: var(--muted);
+   background: rgba(255, 255, 255, 0.05);
+   border: 1px solid var(--card-border);
+   border-radius: 100px;
+   padding: 0.35rem 0.9rem;
+   margin-bottom: 1.5rem;
+ }
+
+ .location-badge::before {
+   content: '📍';
+   font-size: 0.85em;
+ }
+
+ /* Loading state */
+ .loading-pulse {
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   border: 2px solid rgba(245, 200, 66, 0.2);
+   border-top-color: var(--gold);
+   animation: spin 1s linear infinite;
+   margin: 1rem auto;
+ }
+
+ footer {
+   margin-top: 1.5rem;
+   font-size: 0.78rem;
+   color: rgba(139, 164, 204, 0.6);
+   letter-spacing: 0.04em;
+   position: relative;
+   z-index: 1;
+   opacity: 0;
+   animation: fadeSlideUp 0.8s ease 0.4s forwards;
+ }
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245, 200, 66, 0.35);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+footer a:hover {
+  color: #ffe07a;
+  border-bottom-color: rgba(255, 224, 122, 0.7);
+}
+
+ @keyframes fadeSlideDown {
+   from {
+     opacity: 0;
+     transform: translateY(-20px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ @keyframes fadeSlideUp {
+   from {
+     opacity: 0;
+     transform: translateY(20px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ @keyframes spin {
+   to {
+     transform: rotate(360deg);
+   }
+ }

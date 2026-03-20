@@ -199,3 +199,65 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
+
+/* =============================================
+   HOME PAGE — RESPONSIVE OVERRIDES
+============================================= */
+
+/* ── Tablet (32rem) ─── */
+@media only screen and (min-width: 32rem) {
+
+  .hero {
+    padding: 4rem 2rem;
+  }
+
+  .spotlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Desktop (55rem) ─── */
+@media only screen and (min-width: 55rem) {
+
+  /* Home grid: 3 columns side by side */
+  .home-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.2fr;
+    align-items: start;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+
+  .hero {
+    padding: 5rem 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  /* Spotlights: up to 3 columns */
+  .spotlights-section {
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .spotlights-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .spotlights-heading {
+    font-size: 1.8rem;
+  }
+}
+
+/* ── Wide (75rem) ─── */
+@media only screen and (min-width: 75rem) {
+
+  .home-grid,
+  .spotlights-section {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
