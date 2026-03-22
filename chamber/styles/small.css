@@ -471,6 +471,11 @@ footer {
 
 .footer-brand a {
   color: var(--text-light);
+  text-decoration: underline;
+}
+
+.footer-brand a:hover {
+  color: var(--gold);
 }
 
 .footer-meta {
