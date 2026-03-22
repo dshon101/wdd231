@@ -1,263 +1,227 @@
-/* =============================================
-   LUSAKA CHAMBER OF COMMERCE
-   larger.css — Tablet & Desktop (32rem+)
-============================================= */
-
-/* ===== TABLET: 32rem (512px) ===== */
-@media only screen and (min-width: 32rem) {
-
-  /* Header */
+@media only screen and (min-width:32rem) {
   .header-inner {
-    padding: 0.75rem 1.5rem;
+    padding: .75rem 1.5rem
   }
 
   .brand-name {
-    font-size: 1.15rem;
+    font-size: 1.15rem
   }
 
   .brand-tagline {
-    font-size: 0.75rem;
+    font-size: .75rem
   }
 
-  /* Mobile nav still used at this width */
-
-  /* Hero */
   .directory-hero {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.5rem
   }
 
   .directory-hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.2rem
   }
 
-  /* Cards */
   #directory-container {
-    padding: 1.5rem;
+    padding: 1.5rem
   }
 
-  /* List view shows more detail at tablet */
   .list-view .card-detail {
-    font-size: 0.85rem;
+    font-size: .85rem
   }
 
-  /* Footer */
   .footer-inner {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1rem
   }
 
   .footer-brand {
-    flex: 1 1 240px;
+    flex: 1 1 240px
   }
 
   .footer-meta {
-    flex: 1 1 200px;
+    flex: 1 1 200px
   }
 
   .footer-social {
-    flex: 0 0 auto;
+    flex: 0 0 auto
   }
 }
 
-/* ===== DESKTOP: 55rem (880px) ===== */
-@media only screen and (min-width: 55rem) {
-
-  /* Switch to desktop nav, hide hamburger */
+@media only screen and (min-width:55rem) {
   #hamburger {
-    display: none;
+    display: none
   }
 
   #mobile-nav {
-    display: none !important;
+    display: none !important
   }
 
   #main-nav {
     display: flex;
-    align-items: center;
+    align-items: center
   }
 
   #main-nav ul {
     display: flex;
-    gap: 0.25rem;
+    gap: .25rem
   }
 
   #main-nav ul li a {
     display: block;
-    padding: 0.5rem 1rem;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
+    padding: .5rem 1rem;
+    color: rgba(255, 255, 255, .85);
+    font-size: .9rem;
+    letter-spacing: .5px;
     border-radius: 6px;
-    transition: background-color 0.2s, color 0.2s;
-    font-family: var(--font-body);
+    transition: background-color .2s, color .2s;
+    font-family: var(--font-body)
   }
 
   #main-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--gold);
+    background-color: rgba(255, 255, 255, .1);
+    color: var(--gold)
   }
 
   #main-nav ul li a.active {
     background-color: var(--gold);
     color: var(--green-dark);
-    font-weight: 600;
+    font-weight: 600
   }
 
-  /* Header */
   .header-inner {
-    padding: 0.75rem 2rem;
+    padding: .75rem 2rem
   }
 
-  /* Hero */
   .directory-hero {
-    padding: 4rem 2rem;
+    padding: 4rem 2rem
   }
 
   .directory-hero h1 {
-    font-size: 2.8rem;
+    font-size: 2.8rem
   }
 
   .directory-hero p {
-    font-size: 1.1rem;
+    font-size: 1.1rem
   }
 
-  /* Controls */
   .directory-controls {
-    padding: 0.75rem 2rem;
+    padding: .75rem 2rem
   }
 
-  /* Cards container */
   #directory-container {
-    padding: 2rem;
+    padding: 2rem
   }
 
-  /* Grid — larger cards on desktop */
   #directory-container.grid-view {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 1.5rem
   }
 
-  /* List — show description on desktop */
   .list-view .card-desc {
     display: block;
-    font-size: 0.85rem;
+    font-size: .85rem;
     color: var(--text-mid);
     margin: 0;
-    flex-basis: 100%;
+    flex-basis: 100%
   }
 
   .list-view .card-body {
     flex-wrap: nowrap;
     align-items: flex-start;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1rem
   }
 
   .list-view .card-left {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
-    flex: 1;
+    gap: .3rem;
+    flex: 1
   }
 
   .list-view .card-right {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: .3rem;
     align-items: flex-end;
-    font-size: 0.82rem;
+    font-size: .82rem
   }
 
   .list-view .card-img-wrap {
     width: 72px;
-    height: 72px;
+    height: 72px
   }
 
-  /* Footer */
   .footer-inner {
-    padding: 0 1rem;
+    padding: 0 1rem
   }
 }
 
-/* ===== WIDE: 75rem (1200px) ===== */
-@media only screen and (min-width: 75rem) {
+@media only screen and (min-width:75rem) {
 
-  .header-inner,
-  .controls-inner,
   #directory-container,
-  .footer-inner {
+  .controls-inner,
+  .footer-inner,
+  .header-inner {
     max-width: 1200px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto
   }
 
   #directory-container.grid-view {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
   }
 }
 
-/* =============================================
-   HOME PAGE — RESPONSIVE OVERRIDES
-============================================= */
-
-/* ── Tablet (32rem) ─── */
-@media only screen and (min-width: 32rem) {
-
+@media only screen and (min-width:32rem) {
   .hero {
-    padding: 4rem 2rem;
+    padding: 4rem 2rem
   }
 
   .spotlights-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr)
   }
 }
 
-/* ── Desktop (55rem) ─── */
-@media only screen and (min-width: 55rem) {
-
-  /* Home grid: 3 columns side by side */
+@media only screen and (min-width:55rem) {
   .home-grid {
     display: grid;
     grid-template-columns: 2fr 1.2fr 1.2fr;
     align-items: start;
     margin: 2rem auto;
-    padding: 0 2rem;
+    padding: 0 2rem
   }
 
   .hero {
-    padding: 5rem 2rem;
+    padding: 5rem 2rem
   }
 
   .hero p {
-    font-size: 1.1rem;
+    font-size: 1.1rem
   }
 
-  /* Spotlights: up to 3 columns */
   .spotlights-section {
     padding: 0 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3rem
   }
 
   .spotlights-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr)
   }
 
   .spotlights-heading {
-    font-size: 1.8rem;
+    font-size: 1.8rem
   }
 }
 
-/* ── Wide (75rem) ─── */
-@media only screen and (min-width: 75rem) {
+@media only screen and (min-width:75rem) {
 
   .home-grid,
   .spotlights-section {
     max-width: 1200px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto
   }
 }
