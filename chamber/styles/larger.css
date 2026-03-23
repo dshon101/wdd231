@@ -225,3 +225,71 @@
     margin-right: auto
   }
 }
+
+/* ═══════════════════════════════════════════
+   JOIN PAGE responsive additions
+   ═══════════════════════════════════════════ */
+
+@media only screen and (min-width: 32rem) {
+  .join-hero {
+    padding: 3.5rem 2rem 3rem;
+  }
+
+  .join-layout {
+    padding: 0 1.5rem 3rem;
+  }
+
+  .membership-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    gap: 1rem;
+  }
+
+  .thankyou-details-section {
+    padding: 0 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 55rem) {
+
+  /* Side-by-side: form left, cards right */
+  .join-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    align-items: start;
+    gap: 2.5rem;
+    padding: 0 2rem 4rem;
+  }
+
+  /* Cards go to the right on large screens */
+  .membership-cards-section {
+    order: 2;
+  }
+
+  .join-form-section {
+    order: 1;
+  }
+
+  /* Stack cards in single column on the right */
+  .membership-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: .85rem;
+  }
+
+  .join-hero {
+    padding: 4.5rem 2rem 3.5rem;
+  }
+
+  .thankyou-details-section {
+    padding: 0 2rem;
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  .join-layout {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

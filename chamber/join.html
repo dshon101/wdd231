@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Join the Lusaka Chamber of Commerce — apply for membership and grow your business in Zambia's capital.">
+    <meta name="author" content="Demetrious Shoniwa">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Join | Lusaka Chamber of Commerce">
+    <meta property="og:description"
+        content="Apply for membership and connect with Lusaka's leading business community.">
+    <meta property="og:image" content="https://dshon101.github.io/wdd231/chamber/images/lusaka-chamber-og.jpg">
+    <meta property="og:url" content="https://dshon101.github.io/wdd231/chamber/join.html">
+    <title>Join | Lusaka Chamber of Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap">
+    </noscript>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-inner">
+            <div class="header-brand">
+                <div class="brand-logo" role="img" aria-label="Lusaka Chamber of Commerce Logo">
+                    <span class="logo-l">L</span>
+                    <span class="logo-cc">CC</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Lusaka Chamber</span>
+                    <span class="brand-tagline">of Commerce &amp; Industry</span>
+                </div>
+            </div>
+
+            <nav id="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html" class="active" aria-current="page">Join</a></li>
+                </ul>
+            </nav>
+
+            <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div id="mobile-nav" aria-hidden="true">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="join.html" class="active" aria-current="page">Join</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+
+        <!-- Page hero -->
+        <section class="join-hero" aria-label="Join the chamber">
+            <div class="join-hero-content">
+                <h1>Join the Lusaka Chamber</h1>
+                <p>Become part of Zambia's most influential business network. Apply below and take your organisation to
+                    the next level.</p>
+            </div>
+        </section>
+
+        <!-- Join layout: form + membership cards -->
+        <div class="join-layout">
+
+            <!-- ── APPLICATION FORM ── -->
+            <section class="join-form-section" aria-labelledby="form-heading">
+                <h2 id="form-heading" class="join-section-title">Membership Application</h2>
+
+                <form id="join-form" method="GET" action="thankyou.html" novalidate>
+
+                    <!-- First Name -->
+                    <label for="first-name">
+                        First Name <span class="required-star" aria-hidden="true">*</span>
+                        <input type="text" id="first-name" name="firstName" required autocomplete="given-name"
+                            title="Enter your first name" placeholder="e.g. Demetrious">
+                    </label>
+
+                    <!-- Last Name -->
+                    <label for="last-name">
+                        Last Name <span class="required-star" aria-hidden="true">*</span>
+                        <input type="text" id="last-name" name="lastName" required autocomplete="family-name"
+                            title="Enter your last name" placeholder="e.g. Shoniwa">
+                    </label>
+
+                    <!-- Organisational Title -->
+                    <label for="org-title">
+                        Organisational Title
+                        <span class="field-hint">(min. 7 characters, letters, hyphens &amp; spaces only)</span>
+                        <input type="text" id="org-title" name="orgTitle" autocomplete="organization-title"
+                            title="Your title within your organisation — letters, hyphens, and spaces only, minimum 7 characters"
+                            placeholder="e.g. Managing Director" pattern="[A-Za-z\- ]{7,}">
+                    </label>
+
+                    <!-- Email -->
+                    <label for="email">
+                        Email Address <span class="required-star" aria-hidden="true">*</span>
+                        <input type="email" id="email" name="email" required autocomplete="email"
+                            title="Enter a valid email address" placeholder="e.g. yourname@business.co.zm">
+                    </label>
+
+                    <!-- Mobile Phone -->
+                    <label for="phone">
+                        Mobile Phone Number <span class="required-star" aria-hidden="true">*</span>
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel"
+                            title="Enter your mobile phone number" placeholder="e.g. +260 977 123 456">
+                    </label>
+
+                    <!-- Business / Organisation Name -->
+                    <label for="org-name">
+                        Business / Organisation Name <span class="required-star" aria-hidden="true">*</span>
+                        <input type="text" id="org-name" name="orgName" required autocomplete="organization"
+                            title="Enter your business or organisation name" placeholder="e.g. Acme Zambia Ltd">
+                    </label>
+
+                    <!-- Membership Level -->
+                    <label for="membership-level">
+                        Membership Level <span class="required-star" aria-hidden="true">*</span>
+                        <select id="membership-level" name="membershipLevel" required
+                            title="Select your desired membership level">
+                            <option value="">-- Select a Level --</option>
+                            <option value="np">NP Membership — Non-Profit (No Fee)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <!-- Business Description -->
+                    <label for="description">
+                        Business / Organisation Description
+                        <textarea id="description" name="description"
+                            title="Briefly describe your business or organisation" rows="4"
+                            placeholder="Tell us about your organisation, what you do, and what you hope to gain from chamber membership…"></textarea>
+                    </label>
+
+                    <!-- Hidden timestamp -->
+                    <input type="hidden" id="timestamp" name="timestamp">
+
+                    <!-- Submit -->
+                    <input type="submit" value="Submit Application" class="join-submit-btn">
+
+                </form>
+            </section>
+
+            <!-- ── MEMBERSHIP LEVEL CARDS ── -->
+            <aside class="membership-cards-section" aria-label="Membership levels">
+                <h2 class="join-section-title">Membership Levels</h2>
+                <p class="membership-intro">Choose the level that best fits your organisation. Click <strong>Learn
+                        More</strong> to see full benefits.</p>
+
+                <div class="membership-cards-grid">
+
+                    <!-- NP Card -->
+                    <div class="membership-card membership-card--np" style="--card-delay: 0.1s">
+                        <div class="mcard-header">
+                            <span class="mcard-icon" aria-hidden="true">🤝</span>
+                            <h3 class="mcard-title">NP Membership</h3>
+                        </div>
+                        <p class="mcard-fee">No Fee</p>
+                        <p class="mcard-tagline">For registered non-profit organisations</p>
+                        <button class="mcard-learn-btn" aria-haspopup="dialog" data-modal="modal-np">Learn More</button>
+                    </div>
+
+                    <!-- Bronze Card -->
+                    <div class="membership-card membership-card--bronze" style="--card-delay: 0.25s">
+                        <div class="mcard-header">
+                            <span class="mcard-icon" aria-hidden="true">🥉</span>
+                            <h3 class="mcard-title">Bronze Membership</h3>
+                        </div>
+                        <p class="mcard-fee">K 2,400 / year</p>
+                        <p class="mcard-tagline">Great starting point for small businesses</p>
+                        <button class="mcard-learn-btn" aria-haspopup="dialog" data-modal="modal-bronze">Learn
+                            More</button>
+                    </div>
+
+                    <!-- Silver Card -->
+                    <div class="membership-card membership-card--silver" style="--card-delay: 0.4s">
+                        <div class="mcard-header">
+                            <span class="mcard-icon" aria-hidden="true">🥈</span>
+                            <h3 class="mcard-title">Silver Membership</h3>
+                        </div>
+                        <p class="mcard-fee">K 6,000 / year</p>
+                        <p class="mcard-tagline">Enhanced visibility &amp; networking access</p>
+                        <button class="mcard-learn-btn" aria-haspopup="dialog" data-modal="modal-silver">Learn
+                            More</button>
+                    </div>
+
+                    <!-- Gold Card -->
+                    <div class="membership-card membership-card--gold" style="--card-delay: 0.55s">
+                        <div class="mcard-header">
+                            <span class="mcard-icon" aria-hidden="true">🥇</span>
+                            <h3 class="mcard-title">Gold Membership</h3>
+                        </div>
+                        <p class="mcard-fee">K 12,000 / year</p>
+                        <p class="mcard-tagline">Maximum exposure &amp; premium benefits</p>
+                        <button class="mcard-learn-btn" aria-haspopup="dialog" data-modal="modal-gold">Learn
+                            More</button>
+                    </div>
+
+                </div>
+            </aside>
+        </div><!-- /.join-layout -->
+
+    </main>
+
+    <!-- ===== MODALS ===== -->
+
+    <!-- NP Modal -->
+    <dialog id="modal-np" aria-labelledby="modal-np-title">
+        <button class="modal-close" aria-label="Close dialog">&#10005;</button>
+        <div class="modal-header modal-header--np">
+            <span class="modal-icon" aria-hidden="true">🤝</span>
+            <h2 id="modal-np-title">NP Membership</h2>
+            <p class="modal-fee">No Fee — Non-Profit Organisations</p>
+        </div>
+        <div class="modal-body">
+            <p>Designed for registered non-profit organisations committed to serving the Lusaka community. This level
+                gives civil society a platform within the chamber network.</p>
+            <h3>Benefits Include:</h3>
+            <ul>
+                <li>Chamber member listing in the online directory</li>
+                <li>Attendance at general networking events</li>
+                <li>Access to monthly chamber newsletter</li>
+                <li>Participation in community outreach programmes</li>
+                <li>Voting rights at the Annual General Meeting</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <!-- Bronze Modal -->
+    <dialog id="modal-bronze" aria-labelledby="modal-bronze-title">
+        <button class="modal-close" aria-label="Close dialog">&#10005;</button>
+        <div class="modal-header modal-header--bronze">
+            <span class="modal-icon" aria-hidden="true">🥉</span>
+            <h2 id="modal-bronze-title">Bronze Membership</h2>
+            <p class="modal-fee">K 2,400 / year</p>
+        </div>
+        <div class="modal-body">
+            <p>Ideal for startups and small businesses looking to grow their local network and gain visibility within
+                Lusaka's commercial ecosystem.</p>
+            <h3>Benefits Include:</h3>
+            <ul>
+                <li>All NP level benefits</li>
+                <li>Featured in the printed chamber business directory</li>
+                <li>Discounted rates on chamber training workshops</li>
+                <li>10% discount on chamber event tickets</li>
+                <li>Access to the member resource portal</li>
+                <li>One free classified listing per quarter</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <!-- Silver Modal -->
+    <dialog id="modal-silver" aria-labelledby="modal-silver-title">
+        <button class="modal-close" aria-label="Close dialog">&#10005;</button>
+        <div class="modal-header modal-header--silver">
+            <span class="modal-icon" aria-hidden="true">🥈</span>
+            <h2 id="modal-silver-title">Silver Membership</h2>
+            <p class="modal-fee">K 6,000 / year</p>
+        </div>
+        <div class="modal-body">
+            <p>Suited for growing SMEs that want greater visibility, networking opportunities, and a competitive edge in
+                the Lusaka market.</p>
+            <h3>Benefits Include:</h3>
+            <ul>
+                <li>All Bronze level benefits</li>
+                <li>Spotlight feature on the chamber website home page (rotational)</li>
+                <li>Priority seating at chamber events and galas</li>
+                <li>25% discount on all chamber events and training</li>
+                <li>Logo placement in the monthly chamber newsletter</li>
+                <li>One free banner advertisement per year on the website</li>
+                <li>Access to exclusive Silver/Gold member networking dinners</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <!-- Gold Modal -->
+    <dialog id="modal-gold" aria-labelledby="modal-gold-title">
+        <button class="modal-close" aria-label="Close dialog">&#10005;</button>
+        <div class="modal-header modal-header--gold">
+            <span class="modal-icon" aria-hidden="true">🥇</span>
+            <h2 id="modal-gold-title">Gold Membership</h2>
+            <p class="modal-fee">K 12,000 / year</p>
+        </div>
+        <div class="modal-body">
+            <p>The premium tier for established organisations that want maximum exposure, influence, and access to the
+                chamber's full suite of services.</p>
+            <h3>Benefits Include:</h3>
+            <ul>
+                <li>All Silver level benefits</li>
+                <li>Permanent spotlight position on the chamber home page</li>
+                <li>Dedicated profile page on the chamber website</li>
+                <li>Free exhibition booth at the annual Lusaka Trade &amp; Investment Expo</li>
+                <li>50% discount on all events and training programmes</li>
+                <li>Speaking opportunity at one chamber event per year</li>
+                <li>Seat on the Chamber Advisory Council</li>
+                <li>Priority referrals and introductions to investors and government contacts</li>
+                <li>Quarterly one-on-one strategic session with chamber leadership</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>Lusaka Chamber of Commerce &amp; Industry</strong>
+                <p>Cairo Road, Lusaka CBD, Lusaka 10101, Zambia</p>
+                <p><a href="mailto:info@lusakachamber.co.zm">info@lusakachamber.co.zm</a> &bull; +260 211 228 800</p>
+            </div>
+            <div class="footer-meta">
+                <p>Demetrious Shoniwa &bull; WDD 231</p>
+                <p>&copy; <span id="currentYear"></span> Lusaka Chamber of Commerce</p>
+                <p id="lastModified" class="last-modified"></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Twitter / X Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

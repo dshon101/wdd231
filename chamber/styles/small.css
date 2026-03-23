@@ -201,7 +201,9 @@ main {
 
 .directory-hero {
   background-color: var(--green-dark);
-  background-image: linear-gradient(135deg, var(--green-dark) 60%, var(--green-mid));
+  background-image: linear-gradient(135deg, rgba(26, 71, 49, .88) 0%, rgba(45, 122, 79, .75) 100%), url('../images/lusaka-hero.webp');
+  background-size: cover;
+  background-position: center;
   color: var(--text-light);
   text-align: center;
   padding: 2.5rem 1rem;
@@ -789,4 +791,508 @@ footer {
 
 .spotlight-detail a:hover {
   color: var(--gold)
+}
+
+/* ═══════════════════════════════════════════
+   JOIN PAGE — join.html & thankyou.html
+   ═══════════════════════════════════════════ */
+
+/* ── Join hero ── */
+.join-hero {
+  background-color: var(--green-dark);
+  background-image: linear-gradient(135deg, rgba(26, 71, 49, .9) 0%, rgba(45, 122, 79, .8) 100%),
+    url('../images/lusaka-hero.webp');
+  background-size: cover;
+  background-position: center;
+  color: var(--text-light);
+  text-align: center;
+  padding: 3rem 1.25rem 2.5rem;
+  border-bottom: 4px solid var(--gold);
+}
+
+.join-hero-content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.join-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--text-light);
+  margin: 0 0 .6rem;
+}
+
+.join-hero p {
+  font-size: .95rem;
+  color: rgba(249, 249, 244, .85);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Join layout wrapper ── */
+.join-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem 3rem;
+}
+
+/* ── Section titles ── */
+.join-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--green-dark);
+  margin: 0 0 1.2rem;
+  padding-bottom: .4rem;
+  border-bottom: 3px solid var(--gold);
+}
+
+/* ── Form styles ── */
+.join-form-section {
+  width: 100%;
+}
+
+#join-form {
+  display: flex;
+  flex-direction: column;
+  gap: .1rem;
+}
+
+#join-form label {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-bottom: .9rem;
+}
+
+.field-hint {
+  font-size: .75rem;
+  font-weight: 400;
+  color: var(--text-mid);
+}
+
+.required-star {
+  color: #c0392b;
+}
+
+#join-form input[type="text"],
+#join-form input[type="email"],
+#join-form input[type="tel"],
+#join-form select,
+#join-form textarea {
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border: 1px solid #bbb;
+  border-left: 4px solid var(--green-mid);
+  border-radius: 6px;
+  padding: .55rem .75rem;
+  width: 100%;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+#join-form input:required,
+#join-form select[required] {
+  border-left-color: #c0392b;
+}
+
+#join-form input:focus,
+#join-form select:focus,
+#join-form textarea:focus {
+  border-left-color: var(--green-dark);
+  border-color: var(--green-mid);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45, 122, 79, .15);
+}
+
+#join-form input:required:valid,
+#join-form select:required:valid {
+  border-left-color: #27ae60;
+}
+
+#join-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.join-submit-btn {
+  display: inline-block;
+  background-color: var(--green-dark);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  padding: .75rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: .5rem;
+  transition: background-color .2s, transform .2s;
+  -webkit-appearance: none;
+  appearance: none;
+  align-self: flex-start;
+}
+
+.join-submit-btn:hover {
+  background-color: var(--green-mid);
+  transform: translateY(-2px);
+}
+
+/* ── Membership cards section ── */
+.membership-cards-section {
+  width: 100%;
+}
+
+.membership-intro {
+  font-size: .9rem;
+  color: var(--text-mid);
+  margin: -.5rem 0 1.2rem;
+}
+
+.membership-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Card entrance animation ── */
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.membership-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  /* Animate in on page load using the CSS custom property for staggered delay */
+  animation: cardSlideIn .55s ease both;
+  animation-delay: var(--card-delay, 0s);
+}
+
+.membership-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Per-tier colour accents */
+.membership-card--np {
+  border-top: 4px solid #2d7a4f;
+}
+
+.membership-card--bronze {
+  border-top: 4px solid #cd7f32;
+}
+
+.membership-card--silver {
+  border-top: 4px solid #9e9e9e;
+}
+
+.membership-card--gold {
+  border-top: 4px solid var(--gold);
+}
+
+.mcard-header {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.mcard-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.mcard-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--green-dark);
+  margin: 0;
+}
+
+.mcard-fee {
+  font-size: .85rem;
+  font-weight: 700;
+  color: #7a5a00;
+  margin: .1rem 0 0;
+}
+
+.mcard-tagline {
+  font-size: .8rem;
+  color: var(--text-mid);
+  margin: 0;
+}
+
+.mcard-learn-btn {
+  align-self: flex-start;
+  margin-top: .4rem;
+  background: none;
+  border: 1px solid var(--green-mid);
+  color: var(--green-mid);
+  font-family: var(--font-body);
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .3rem .85rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+
+.mcard-learn-btn:hover {
+  background-color: var(--green-mid);
+  color: var(--white);
+}
+
+/* ── Dialog / Modal ── */
+dialog {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  width: 92%;
+  max-width: 520px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, .25);
+  position: relative;
+}
+
+::backdrop {
+  background-color: rgba(10, 30, 15, .6);
+  backdrop-filter: blur(2px);
+}
+
+.modal-close {
+  position: absolute;
+  top: .85rem;
+  right: .85rem;
+  background: rgba(255, 255, 255, .25);
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 6px;
+  color: var(--white);
+  cursor: pointer;
+  font-size: .9rem;
+  padding: .28rem .6rem;
+  line-height: 1;
+  transition: background .2s;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, .45);
+}
+
+.modal-header {
+  padding: 1.4rem 1.4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.modal-header--np {
+  background-color: var(--green-dark);
+}
+
+.modal-header--bronze {
+  background-color: #7a4a1e;
+}
+
+.modal-header--silver {
+  background-color: #5a5a5a;
+}
+
+.modal-header--gold {
+  background-color: #7a5a00;
+}
+
+.modal-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.modal-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--white);
+  margin: 0;
+}
+
+.modal-fee {
+  font-size: .85rem;
+  color: rgba(255, 255, 255, .85);
+  margin: 0;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 1.2rem 1.4rem 1.5rem;
+  background-color: var(--white);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.modal-body p {
+  font-size: .9rem;
+  color: var(--text-mid);
+  margin: 0 0 .9rem;
+  line-height: 1.65;
+}
+
+.modal-body h3 {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin: 0 0 .5rem;
+}
+
+.modal-body ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.modal-body ul li {
+  font-size: .88rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+/* ── Thank You hero ── */
+.thankyou-hero {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+  color: var(--text-light);
+  text-align: center;
+  padding: 3rem 1.25rem 2.5rem;
+  border-bottom: 4px solid var(--gold);
+}
+
+.thankyou-hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.thankyou-check {
+  font-size: 2.8rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+
+.thankyou-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--text-light);
+  margin: 0 0 .6rem;
+}
+
+.thankyou-hero p {
+  font-size: .95rem;
+  color: rgba(249, 249, 244, .85);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Thank You details section ── */
+.thankyou-details-section {
+  max-width: 700px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+
+.thankyou-subtitle {
+  font-size: .9rem;
+  color: var(--text-mid);
+  margin: -.5rem 0 1.2rem;
+}
+
+.thankyou-results {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+}
+
+.thankyou-greeting {
+  padding: 1rem 1.2rem .75rem;
+  margin: 0;
+  font-size: .92rem;
+  color: var(--text-mid);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--green-light);
+}
+
+.thankyou-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.thankyou-row {
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+  padding: .65rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  font-size: .9rem;
+}
+
+.thankyou-row:last-child {
+  border-bottom: none;
+}
+
+.thankyou-label {
+  min-width: 160px;
+  font-weight: 700;
+  color: var(--green-dark);
+  flex-shrink: 0;
+}
+
+.thankyou-value {
+  color: var(--text-dark);
+  word-break: break-word;
+}
+
+.thankyou-value em {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ── Actions ── */
+.thankyou-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.cta-btn--outline {
+  background-color: transparent;
+  border: 2px solid var(--gold);
+  color: var(--green-dark);
+}
+
+.cta-btn--outline:hover {
+  background-color: var(--gold-light);
+  color: var(--green-dark);
 }
