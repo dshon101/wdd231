@@ -656,3 +656,140 @@ footer {
   font-size: 0.76rem;
   color: rgba(255, 255, 255, 0.85);
 }
+
+/* ── COURSE DETAILS MODAL ── */
+dialog {
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--clr-primary);
+  padding: 1.8rem 1.6rem 1.6rem;
+  background-color: var(--clr-surface);
+  box-shadow: 0 8px 40px rgba(79, 70, 229, 0.22);
+  width: 92%;
+  max-width: 560px;
+  position: relative;
+  font-family: var(--font-body);
+  color: var(--clr-text);
+  animation: modal-in 0.22s ease;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+::backdrop {
+  background-color: rgba(15, 10, 60, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+/* Close button */
+dialog button#closeModal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  color: var(--clr-text-soft);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0.35rem 0.6rem;
+  transition: background var(--transition), color var(--transition);
+}
+
+dialog button#closeModal:hover {
+  background: var(--clr-primary);
+  color: #fff;
+  border-color: var(--clr-primary);
+}
+
+/* Status badge at top of modal */
+.modal-status {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2em 0.7em;
+  border-radius: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.modal-done {
+  background: var(--clr-done-bg);
+  color: var(--clr-done);
+}
+
+.modal-progress {
+  background: var(--clr-progress-bg);
+  color: var(--clr-progress);
+}
+
+/* Modal headings */
+dialog .modal-code {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  color: var(--clr-primary);
+  margin: 0 0 0.2rem;
+}
+
+dialog .modal-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--clr-text-soft);
+  margin: 0 0 1rem;
+}
+
+/* Modal body text */
+dialog p {
+  margin: 0.4rem 0;
+  font-size: 0.92rem;
+  color: var(--clr-text-soft);
+  line-height: 1.65;
+}
+
+dialog p strong {
+  color: var(--clr-text);
+}
+
+dialog .modal-desc {
+  border-left: 3px solid var(--clr-border);
+  padding-left: 0.8rem;
+  margin: 0.8rem 0;
+  color: var(--clr-text-soft);
+}
+
+dialog .modal-tech-label {
+  margin-bottom: 0.35rem;
+}
+
+/* Technology tag list */
+.modal-tech-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.modal-tech-list li {
+  background: var(--clr-primary-lt);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25em 0.75em;
+  border-radius: 1rem;
+}
