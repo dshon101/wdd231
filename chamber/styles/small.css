@@ -201,13 +201,36 @@ main {
 
 .directory-hero {
   background-color: var(--green-dark);
-  background-image: linear-gradient(135deg, rgba(26, 71, 49, .88) 0%, rgba(45, 122, 79, .75) 100%), url('../images/lusaka-hero.webp');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
   color: var(--text-light);
   text-align: center;
   padding: 2.5rem 1rem;
   border-bottom: 4px solid var(--gold)
+}
+
+.directory-hero .hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  opacity: 1;
+}
+
+.directory-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 71, 49, .88) 0%, rgba(45, 122, 79, .75) 100%);
+  z-index: 1;
+}
+
+.directory-hero>* {
+  position: relative;
+  z-index: 2;
 }
 
 .directory-hero h1 {
@@ -493,13 +516,35 @@ footer {
 
 .hero {
   background-color: var(--green-dark);
-  background-image: linear-gradient(135deg, rgba(26, 71, 49, .88) 0, rgba(45, 122, 79, .75) 100%), url('../images/lusaka-hero.webp');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
   color: var(--text-light);
   text-align: center;
   padding: 3.5rem 1.25rem;
   border-bottom: 4px solid var(--gold)
+}
+
+.hero .hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 71, 49, .88) 0, rgba(45, 122, 79, .75) 100%);
+  z-index: 1;
+}
+
+.hero>* {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content {
@@ -800,14 +845,35 @@ footer {
 /* ── Join hero ── */
 .join-hero {
   background-color: var(--green-dark);
-  background-image: linear-gradient(135deg, rgba(26, 71, 49, .9) 0%, rgba(45, 122, 79, .8) 100%),
-    url('../images/lusaka-hero.webp');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
   color: var(--text-light);
   text-align: center;
   padding: 3rem 1.25rem 2.5rem;
   border-bottom: 4px solid var(--gold);
+}
+
+.join-hero .hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.join-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 71, 49, .9) 0%, rgba(45, 122, 79, .8) 100%);
+  z-index: 1;
+}
+
+.join-hero>* {
+  position: relative;
+  z-index: 2;
 }
 
 .join-hero-content {
