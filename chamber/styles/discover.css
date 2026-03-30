@@ -5,8 +5,8 @@
 
 /* ── Hero ──────────────────────────────────────────────────── */
 .discover-hero {
-  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
-  color: var(--text-light);
+  background: linear-gradient(135deg, #1a4731 0%, #2d7a4f 100%);
+  color: #f9f9f4;
   text-align: center;
   padding: 3rem 1.25rem 2.5rem;
   border-bottom: 4px solid var(--gold);
@@ -20,14 +20,14 @@
 .discover-hero h1 {
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 5vw, 3rem);
-  color: var(--text-light);
+  color: #f9f9f4;
   margin: 0 0 0.6rem;
   line-height: 1.2;
 }
 
 .discover-hero p {
   font-size: 1rem;
-  color: rgba(249, 249, 244, 0.85);
+  color: #f9f9f4;
   margin: 0;
   line-height: 1.6;
 }
@@ -89,7 +89,8 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  transition: none; /* disabled on mobile — enabled at 641px+ */
+  transition: none;
+  /* disabled on mobile — enabled at 641px+ */
 }
 
 /* ── Card body ────────────────────────────────────────────── */

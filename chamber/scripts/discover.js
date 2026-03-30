@@ -42,7 +42,6 @@ function handleVisitMessage() {
   let message = '';
 
   if (!lastVisit) {
-    // First ever visit
     message = 'Welcome! Let us know if you have any questions.';
   } else {
     const msPerDay = 1000 * 60 * 60 * 24;
@@ -57,13 +56,44 @@ function handleVisitMessage() {
     }
   }
 
-  // Save the current visit timestamp
   localStorage.setItem(LAST_VISIT_KEY, now);
 
   msgEl.textContent = message;
   msgEl.closest('.visit-banner')?.removeAttribute('hidden');
 }
 
+// ── Hamburger menu ───────────────────────────────────────────
+function initHamburger() {
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (!hamburger || !mobileNav) return;
+
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    mobileNav.classList.toggle('open');
+    mobileNav.setAttribute('aria-hidden', expanded);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('header')) {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+    }
+  });
+}
+
+// ── Footer: year & last modified ────────────────────────────
+function initFooter() {
+  const yearEl = document.getElementById('currentYear');
+  const modEl = document.getElementById('lastModified');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  if (modEl) modEl.textContent = 'Last Modified: ' + document.lastModified;
+}
+
 // ── Init ─────────────────────────────────────────────────────
 renderCards();
 handleVisitMessage();
+initHamburger();
+initFooter();
