@@ -1,0 +1,266 @@
+/* ================================================================
+   discover.css — Discover Page Styles
+   Lusaka Chamber of Commerce · WDD231
+   ================================================================ */
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.discover-hero {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+  color: var(--text-light);
+  text-align: center;
+  padding: 3rem 1.25rem 2.5rem;
+  border-bottom: 4px solid var(--gold);
+}
+
+.discover-hero-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.discover-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--text-light);
+  margin: 0 0 0.6rem;
+  line-height: 1.2;
+}
+
+.discover-hero p {
+  font-size: 1rem;
+  color: rgba(249, 249, 244, 0.85);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Visit Banner ──────────────────────────────────────────── */
+.visit-banner {
+  background-color: var(--gold-light);
+  border-bottom: 2px solid var(--gold);
+  padding: 0.65rem 1rem;
+  text-align: center;
+}
+
+.visit-banner p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* ── Section wrapper ───────────────────────────────────────── */
+.discover-section {
+  padding: 2rem 0 3rem;
+}
+
+.discover-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ── Card base styles ──────────────────────────────────────── */
+.discover-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Figure & image ───────────────────────────────────────── */
+.discover-figure {
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--green-light);
+  flex-shrink: 0;
+}
+
+.discover-figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: none; /* disabled on mobile — enabled at 641px+ */
+}
+
+/* ── Card body ────────────────────────────────────────────── */
+.discover-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.discover-body h2 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--green-dark);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.discover-body address {
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  line-height: 1.4;
+}
+
+.discover-body p {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.discover-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  background-color: var(--green-dark);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.discover-btn:hover {
+  background-color: var(--green-mid);
+  transform: translateY(-1px);
+}
+
+/* ================================================================
+   SMALL SCREEN — 320px to 640px
+   Single column, linear stacked layout
+   ================================================================ */
+.discover-grid {
+  display: grid;
+  gap: 1.25rem;
+
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
+
+  grid-template-columns: 1fr;
+}
+
+/* ================================================================
+   MEDIUM SCREEN — 641px to 1024px
+   Asymmetric layout: featured card spans 2 cols, others fill around
+   ================================================================ */
+@media only screen and (min-width: 641px) {
+
+  /* Enable hover image effects — medium and large only */
+  .discover-figure img {
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .discover-card:hover .discover-figure img {
+    transform: scale(1.06);
+    filter: brightness(1.08) saturate(1.15);
+  }
+
+  .discover-grid {
+    gap: 1.25rem;
+
+    /*
+      Medium layout — 3 column base
+      card1 = featured (spans 2 cols, tall)
+      card2 = beside card1
+      card3 = beside card1 (below card2)
+      card4-8 = fill in remaining positions
+    */
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-areas:
+      "card1  card1  card2"
+      "card1  card1  card3"
+      "card4  card5  card6"
+      "card7  card8  .    ";
+  }
+
+  /* Featured card gets taller image */
+  [style*="grid-area: card1"] .discover-figure img {
+    height: 300px;
+  }
+}
+
+/* ================================================================
+   LARGE SCREEN — 1025px and above
+   4-column mosaic: unique named area positions per card
+   ================================================================ */
+@media only screen and (min-width: 1025px) {
+
+  .discover-grid {
+    gap: 1.5rem;
+
+    /*
+      Large layout — 4 column mosaic
+      card1 = large feature (top-left, spans 2 rows)
+      card2 = top-right tall
+      card3 = beside card2
+      card4 = spans 2 cols bottom-left
+      card5 = single
+      card6 = single
+      card7 = single
+      card8 = single
+    */
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-areas:
+      "card1  card1  card2  card3"
+      "card1  card1  card4  card4"
+      "card5  card6  card7  card8";
+  }
+
+  /* Tall feature image for card1 at large breakpoint */
+  [style*="grid-area: card1"] .discover-figure img {
+    height: 340px;
+  }
+
+  /* card4 spans 2 cols — give it a wider feel */
+  [style*="grid-area: card4"] {
+    flex-direction: row;
+  }
+
+  [style*="grid-area: card4"] .discover-figure {
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  [style*="grid-area: card4"] .discover-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  [style*="grid-area: card4"] .discover-body {
+    justify-content: center;
+  }
+
+  .discover-wrap {
+    padding: 0 2rem;
+  }
+}
