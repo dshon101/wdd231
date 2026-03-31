@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse EduStar's free textbook library — over 30 curriculum-aligned books for students across Africa, from Siyavula, OpenStax, and Maktaba.">
+  <meta name="author" content="EduStar">
+  <meta property="og:title" content="EduStar – Free Books Library for African Students">
+  <meta property="og:description" content="Free, legal textbooks for students across Africa — filtered by country, grade, and subject.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://[username].github.io/wdd231/final/books.html">
+  <title>EduStar – Books Library</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"> <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html" aria-label="EduStar home">⚡ EduStar</a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
+    <div class="nav-links" id="main-nav" role="list">
+      <a href="index.html" data-page="home" role="listitem">Home</a>
+      <a href="books.html" data-page="books" role="listitem">Books</a>
+      <a href="join.html" data-page="join" role="listitem">Join</a>
+      <a href="about.html" data-page="about" role="listitem">About</a>
+      <a href="https://edustar.my-board.org/portal.html" data-page="login" role="listitem" style="font-weight:600;">🔑 Log In</a>
+    </div>
+  </nav>
+
+  <!-- HERO BACKGROUND -->
+  <div class="background-hero-bg" aria-hidden="true">
+    <div class="background-hero-overlay"></div>
+    <div class="background-hero-particles">
+      <span class="particle">📚</span>
+      <span class="particle">🌍</span>
+      <span class="particle">✨</span>
+      <span class="particle">🎓</span>
+      <span class="particle">⭐</span>
+      <span class="particle">🤖</span>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <main>
+      <!-- PAGE HEADER -->
+      <div class="page-header">
+        <div class="container">
+          <div class="section-label">Free Textbooks</div>
+          <h1>📚 <em>Books</em> Library</h1>
+          <p>Free, legal textbooks from across Africa — filtered for your country and curriculum.</p>
+        </div>
+      </div>
+
+      <div class="container" style="position:relative; z-index:1; padding-bottom:4rem;">
+
+        <!-- FILTERS -->
+        <div class="filters-bar" role="search" aria-label="Filter books">
+          <input class="search-input" type="search" id="search-input" placeholder="🔍 Search books, subjects, grades..."
+            aria-label="Search books" autocomplete="off">
+
+          <select class="filter-select" id="filter-country" aria-label="Filter by country">
+            <option value="">🌍 All Countries</option>
+            <option value="All Africa">All Africa</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+          </select>
+
+          <select class="filter-select" id="filter-subject" aria-label="Filter by subject">
+            <option value="">📚 All Subjects</option>
+            <option value="Commerce">Commerce</option>
+            <option value="English">English</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Science">Science</option>
+            <option value="Technology">Technology</option>
+          </select>
+
+          <button class="btn-clear" id="btn-clear" aria-label="Clear all filters">✕ Clear</button>
+        </div>
+
+        <!-- RESULTS COUNT -->
+        <p class="results-count" id="results-count" aria-live="polite" aria-atomic="true"></p>
+
+        <!-- LOADING SKELETONS -->
+        <div class="loading-grid" id="loading-state" aria-label="Loading books">
+          <div class="skeleton" aria-hidden="true"></div>
+          <div class="skeleton" aria-hidden="true"></div>
+          <div class="skeleton" aria-hidden="true"></div>
+        </div>
+
+        <!-- BOOKS GRID -->
+        <div class="books-grid" id="books-grid" aria-label="Books list" aria-live="polite"></div>
+
+        <!-- EMPTY STATE -->
+        <div id="empty-state" style="display:none;" aria-live="polite">
+          <div class="empty-state">
+            <div class="empty-icon">📭</div>
+            <p>No books found. Try adjusting your filters or <a href="index.html">return home</a>.</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- BOOK DETAIL MODAL -->
+  <div class="modal-backdrop" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">Book Details</h2>
+        <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="join.html">Join</a>
+      <a href="about.html">About</a>
+      <a href="attributions.html">Attributions</a>
+    </div>
+    <p><strong>EduStar</strong> — Smart Learning for Africa &copy; 2026</p>
+    <p>Textbook sources: <a href="https://www.siyavula.com" target="_blank" rel="noopener">Siyavula</a> · <a
+        href="https://openstax.org" target="_blank" rel="noopener">OpenStax</a> · <a href="https://www.maktaba.org"
+        target="_blank" rel="noopener">Maktaba</a></p>
+    <p><a href="https://youtu.be/placeholder" target="_blank" rel="noopener">📹 Project Demo Video</a></p>
+  </footer>
+
+  <div class="toast-wrap" aria-live="polite" aria-atomic="true"></div>
+  <script type="module" src="scripts/books-page.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your EduStar account registration has been received. Welcome to the platform!">
+  <meta name="author" content="EduStar">
+  <title>EduStar – Registration Confirmed</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html" aria-label="EduStar home">⚡ EduStar</a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
+    <div class="nav-links" id="main-nav" role="list">
+      <a href="index.html" data-page="home" role="listitem">Home</a>
+      <a href="books.html" data-page="books" role="listitem">Books</a>
+      <a href="join.html" data-page="join" role="listitem">Join</a>
+      <a href="about.html" data-page="about" role="listitem">About</a>
+      <a href="https://edustar.my-board.org/portal.html" data-page="login" role="listitem" style="font-weight:600;">🔑
+        Log In</a>
+    </div>
+  </nav>
+
+  <!-- HERO BACKGROUND -->
+  <div class="background-hero-bg" aria-hidden="true">
+    <div class="background-hero-overlay"></div>
+    <div class="background-hero-particles">
+      <span class="particle">📚</span>
+      <span class="particle">🌍</span>
+      <span class="particle">✨</span>
+      <span class="particle">🎓</span>
+      <span class="particle">⭐</span>
+      <span class="particle">🤖</span>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <div class="page-wrap">
+      <div class="confirm-wrap">
+        <div class="confirm-card">
+          <div class="confirm-icon" aria-hidden="true">🎉</div>
+          <h1>Welcome to <em>EduStar!</em></h1>
+          <p>Your registration details have been received. Here is a summary of what you submitted. You can now start
+            exploring free books and learning resources.</p>
+
+          <div class="data-table" aria-label="Your submitted registration details">
+            <h2>Your Registration Details</h2>
+            <div id="data-output">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <div
+            style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:1.25rem;margin:1.5rem 0;text-align:left;">
+            <p style="margin:0 0 0.5rem;font-weight:600;">🎉 Next step: Activate your account</p>
+            <p style="margin:0;font-size:0.9rem;opacity:0.8;">Head to the EduStar Portal and use the <strong>Sign
+                Up</strong> tab with the same email address above to set your password and access your dashboard.</p>
+          </div>
+
+          <div class="btn-group">
+            <a href="https://edustar.my-board.org/portal.html" class="btn btn-secondary"
+              style="font-size:1rem;padding:0.85rem 2rem;">🔑 Go to Portal & Sign Up →</a>
+            <a href="books.html" class="btn btn-primary">📚 Browse Books</a>
+            <a href="index.html" class="btn btn-secondary" style="background:transparent;border:1px solid #ccc;">← Back
+              to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="join.html">Join</a>
+      <a href="about.html">About</a>
+      <a href="attributions.html">Attributions</a>
+    </div>
+    <p><strong>EduStar</strong> — Smart Learning for Africa &copy; 2026</p>
+    <p><a href="https://youtu.be/placeholder" target="_blank" rel="noopener">📹 Project Demo Video</a></p>
+  </footer>
+
+  <div class="toast-wrap" aria-live="polite" aria-atomic="true"></div>
+  <script type="module" src="scripts/join-confirm.js"></script>
+</body>
+
+</html>
