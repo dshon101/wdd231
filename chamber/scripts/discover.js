@@ -8,7 +8,12 @@ function renderCards() {
   const grid = document.getElementById('discover-grid');
   if (!grid) return;
 
-  grid.innerHTML = places.map((place, index) => `
+  grid.innerHTML = places.map((place, index) => {
+    // First card is the LCP element — load eagerly with high fetch priority
+    const isFirst = index === 0;
+    const loadingAttr = isFirst ? 'eager' : 'lazy';
+    const fetchPriorityAttr = isFirst ? 'fetchpriority="high"' : '';
+    return `
     <article class="discover-card" style="grid-area: card${index + 1};" aria-label="${place.name}">
       <figure class="discover-figure">
         <img
@@ -16,7 +21,8 @@ function renderCards() {
           alt="${place.alt}"
           width="300"
           height="200"
-          loading="lazy"
+          loading="${loadingAttr}"
+          ${fetchPriorityAttr}
           onerror="this.src='images/discover/placeholder.svg'; this.alt='Image not available';"
         >
       </figure>
@@ -26,8 +32,8 @@ function renderCards() {
         <p>${place.description}</p>
         <button class="discover-btn" aria-label="Learn more about ${place.name}">Learn More</button>
       </div>
-    </article>
-  `).join('');
+    </article>`;
+  }).join('');
 }
 
 // ── Visit tracking with localStorage ───────────────────────

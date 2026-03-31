@@ -3,6 +3,17 @@
    Lusaka Chamber of Commerce · WDD231
    ================================================================ */
 
+/* ── Font display: reduce CLS from web font swap ───────────── */
+@font-face {
+  font-family: 'Playfair Display';
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-display: optional;
+}
+
 /* ── Hero ──────────────────────────────────────────────────── */
 .discover-hero {
   background: linear-gradient(135deg, #1a4731 0%, #2d7a4f 100%);
@@ -58,6 +69,11 @@
   padding: 0 1rem;
 }
 
+/* ── Prevent CLS: reserve space before JS injects cards ───── */
+#discover-grid {
+  min-height: 600px;
+}
+
 /* ── Card base styles ──────────────────────────────────────── */
 .discover-card {
   background-color: var(--white);
@@ -81,11 +97,14 @@
   overflow: hidden;
   background-color: var(--green-light);
   flex-shrink: 0;
+  /* Reserve exact space before image loads — eliminates reflow CLS */
+  aspect-ratio: 3 / 2;
+  width: 100%;
 }
 
 .discover-figure img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -202,9 +221,9 @@
       "card7  card8  .    ";
   }
 
-  /* Featured card gets taller image */
-  [style*="grid-area: card1"] .discover-figure img {
-    height: 300px;
+  /* Featured card gets taller aspect ratio */
+  [style*="grid-area: card1"] .discover-figure {
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -236,9 +255,9 @@
       "card5  card6  card7  card8";
   }
 
-  /* Tall feature image for card1 at large breakpoint */
-  [style*="grid-area: card1"] .discover-figure img {
-    height: 340px;
+  /* Tall feature aspect ratio for card1 at large breakpoint */
+  [style*="grid-area: card1"] .discover-figure {
+    aspect-ratio: 1 / 1;
   }
 
   /* card4 spans 2 cols — give it a wider feel */
@@ -249,6 +268,8 @@
   [style*="grid-area: card4"] .discover-figure {
     width: 280px;
     flex-shrink: 0;
+    aspect-ratio: unset;
+    align-self: stretch;
   }
 
   [style*="grid-area: card4"] .discover-figure img {
