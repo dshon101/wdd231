@@ -91,6 +91,39 @@
   box-shadow: var(--shadow-md);
 }
 
+/* ── Named grid area assignments (CSS classes) ─────────────── */
+.card1 {
+  grid-area: card1;
+}
+
+.card2 {
+  grid-area: card2;
+}
+
+.card3 {
+  grid-area: card3;
+}
+
+.card4 {
+  grid-area: card4;
+}
+
+.card5 {
+  grid-area: card5;
+}
+
+.card6 {
+  grid-area: card6;
+}
+
+.card7 {
+  grid-area: card7;
+}
+
+.card8 {
+  grid-area: card8;
+}
+
 /* ── Figure & image ───────────────────────────────────────── */
 .discover-figure {
   margin: 0;
@@ -222,7 +255,7 @@
   }
 
   /* Featured card gets taller aspect ratio */
-  [style*="grid-area: card1"] .discover-figure {
+  .card1 .discover-figure {
     aspect-ratio: 4 / 3;
   }
 }
@@ -256,29 +289,29 @@
   }
 
   /* Tall feature aspect ratio for card1 at large breakpoint */
-  [style*="grid-area: card1"] .discover-figure {
+  .card1 .discover-figure {
     aspect-ratio: 1 / 1;
   }
 
   /* card4 spans 2 cols — give it a wider feel */
-  [style*="grid-area: card4"] {
+  .card4 {
     flex-direction: row;
   }
 
-  [style*="grid-area: card4"] .discover-figure {
+  .card4 .discover-figure {
     width: 280px;
     flex-shrink: 0;
     aspect-ratio: unset;
     align-self: stretch;
   }
 
-  [style*="grid-area: card4"] .discover-figure img {
+  .card4 .discover-figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  [style*="grid-area: card4"] .discover-body {
+  .card4 .discover-body {
     justify-content: center;
   }
 

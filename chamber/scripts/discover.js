@@ -14,7 +14,7 @@ function renderCards() {
     const loadingAttr = isFirst ? 'eager' : 'lazy';
     const fetchPriorityAttr = isFirst ? 'fetchpriority="high"' : '';
     return `
-    <article class="discover-card" style="grid-area: card${index + 1};" aria-label="${place.name}">
+    <article class="discover-card card${index + 1}" aria-label="${place.name}">
       <figure class="discover-figure">
         <img
           src="${place.image}"
