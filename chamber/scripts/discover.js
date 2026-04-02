@@ -3,37 +3,30 @@
 
 import { places } from '../data/discover.mjs';
 
-// ── Render attraction cards ──────────────────────────────────
+// ── Populate existing card elements with data ────────────────
 function renderCards() {
-  const grid = document.getElementById('discover-grid');
-  if (!grid) return;
+  const cards = document.querySelectorAll('.discover-card');
+  if (!cards.length) return;
 
-  grid.innerHTML = places.map((place, index) => {
-    // First card is the LCP element — load eagerly with high fetch priority
-    const isFirst = index === 0;
-    const loadingAttr = isFirst ? 'eager' : 'lazy';
-    const fetchPriorityAttr = isFirst ? 'fetchpriority="high"' : '';
-    return `
-    <article class="discover-card card${index + 1}" aria-label="${place.name}">
-      <figure class="discover-figure">
-        <img
-          src="${place.image}"
-          alt="${place.alt}"
-          width="300"
-          height="200"
-          loading="${loadingAttr}"
-          ${fetchPriorityAttr}
-          onerror="this.src='images/discover/placeholder.svg'; this.alt='Image not available';"
-        >
-      </figure>
-      <div class="discover-body">
-        <h2>${place.name}</h2>
-        <address>${place.address}</address>
-        <p>${place.description}</p>
-        <button class="discover-btn" aria-label="Learn more about ${place.name}">Learn More</button>
-      </div>
-    </article>`;
-  }).join('');
+  cards.forEach((card, index) => {
+    const place = places[index];
+    if (!place) return;
+
+    const img = card.querySelector('img');
+    const h2 = card.querySelector('h2');
+    const address = card.querySelector('address');
+    const p = card.querySelector('p');
+    const btn = card.querySelector('.discover-btn');
+
+    if (img) {
+      img.src = place.image;
+      img.alt = place.alt;
+    }
+    if (h2) h2.textContent = place.name;
+    if (address) address.textContent = place.address;
+    if (p) p.textContent = place.description;
+    if (btn) btn.setAttribute('aria-label', `Learn more about ${place.name}`);
+  });
 }
 
 // ── Visit tracking with localStorage ───────────────────────
