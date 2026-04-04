@@ -2,6 +2,7 @@
 // WDD231 EduStar Project
 
 export function initNav(activePage) {
+  // Works with new <ul>/<li><a> nav structure
   const links = document.querySelectorAll('.nav-links a');
   links.forEach(link => {
     if (link.dataset.page === activePage) {
@@ -28,6 +29,21 @@ export function initNav(activePage) {
       }
     });
   }
+
+  // Intersection Observer for section reveal transitions
+  const sections = document.querySelectorAll('.section, .hero, .about-hero, .page-header');
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+  sections.forEach(s => revealObserver.observe(s));
 }
 
 export function showToast(message, icon = '✅') {

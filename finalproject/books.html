@@ -5,35 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Browse EduStar's free textbook library — over 30 curriculum-aligned books for students across Africa, from Siyavula, OpenStax, and Maktaba.">
-  <meta name="author" content="EduStar">
+  <meta name="author" content="Daniel Shon">
   <meta property="og:title" content="EduStar – Free Books Library for African Students">
   <meta property="og:description" content="Free, legal textbooks for students across Africa — filtered by country, grade, and subject.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://[username].github.io/wdd231/final/books.html">
+  <meta property="og:image" content="https://dshon101.github.io/wdd231/finalproject/images/og-image.svg">
+  <meta property="og:url" content="https://dshon101.github.io/wdd231/finalproject/books.html">
   <title>EduStar – Books Library</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%E2%AD%90%3C%2Ftext%3E%3C%2Fsvg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"> <noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/large.css">
 </head>
 
 <body>
-  <!-- NAVIGATION -->
-  <nav class="site-nav" aria-label="Main navigation">
-    <a class="nav-logo" href="index.html" aria-label="EduStar home">⚡ EduStar</a>
-    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
-    <div class="nav-links" id="main-nav" role="list">
-      <a href="index.html" data-page="home" role="listitem">Home</a>
-      <a href="books.html" data-page="books" role="listitem">Books</a>
-      <a href="join.html" data-page="join" role="listitem">Join</a>
-      <a href="about.html" data-page="about" role="listitem">About</a>
-      <a href="https://edustar.my-board.org/portal.html" data-page="login" role="listitem" style="font-weight:600;">🔑 Log In</a>
-    </div>
-  </nav>
+  <!-- HEADER + NAVIGATION -->
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="nav-logo" href="index.html" aria-label="EduStar home">⚡ EduStar</a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <ul class="nav-links" id="main-nav">
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="books.html" data-page="books">Books</a></li>
+        <li><a href="join.html" data-page="join">Join</a></li>
+        <li><a href="about.html" data-page="about">About</a></li>
+        <li><a href="https://edustar.my-board.org/portal.html" data-page="login" class="nav-login">🔑 Log In</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- HERO BACKGROUND -->
   <div class="background-hero-bg" aria-hidden="true">
@@ -48,18 +51,18 @@
     </div>
   </div>
 
-  <div class="page-wrap">
-    <main>
+  <main id="main-content">
+    <div class="page-wrap">
       <!-- PAGE HEADER -->
-      <div class="page-header">
-        <div class="container">
+      <section class="page-header" aria-labelledby="books-heading">
+        <div class="es-container">
           <div class="section-label">Free Textbooks</div>
-          <h1>📚 <em>Books</em> Library</h1>
+          <h1 id="books-heading">📚 <em>Books</em> Library</h1>
           <p>Free, legal textbooks from across Africa — filtered for your country and curriculum.</p>
         </div>
-      </div>
+      </section>
 
-      <div class="container" style="position:relative; z-index:1; padding-bottom:4rem;">
+      <div class="es-container books-main">
 
         <!-- FILTERS -->
         <div class="filters-bar" role="search" aria-label="Filter books">
@@ -88,24 +91,24 @@
             <option value="Technology">Technology</option>
           </select>
 
-          <button class="btn-clear" id="btn-clear" aria-label="Clear all filters">✕ Clear</button>
+          <button class="es-btn-clear" id="btn-clear" aria-label="Clear all filters">✕ Clear</button>
         </div>
 
         <!-- RESULTS COUNT -->
         <p class="results-count" id="results-count" aria-live="polite" aria-atomic="true"></p>
 
         <!-- LOADING SKELETONS -->
-        <div class="loading-grid" id="loading-state" aria-label="Loading books">
+        <div class="loading-grid" id="loading-state" role="status" aria-label="Loading books">
           <div class="skeleton" aria-hidden="true"></div>
           <div class="skeleton" aria-hidden="true"></div>
           <div class="skeleton" aria-hidden="true"></div>
         </div>
 
         <!-- BOOKS GRID -->
-        <div class="books-grid" id="books-grid" aria-label="Books list" aria-live="polite"></div>
+        <div class="books-grid" id="books-grid" role="list" aria-live="polite"></div>
 
         <!-- EMPTY STATE -->
-        <div id="empty-state" style="display:none;" aria-live="polite">
+        <div id="empty-state" class="empty-state-wrap" aria-live="polite">
           <div class="empty-state">
             <div class="empty-icon">📭</div>
             <p>No books found. Try adjusting your filters or <a href="index.html">return home</a>.</p>
@@ -113,8 +116,8 @@
         </div>
 
       </div>
-    </main>
-  </div>
+    </div>
+  </main>
 
   <!-- BOOK DETAIL MODAL -->
   <div class="modal-backdrop" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -137,9 +140,7 @@
       <a href="attributions.html">Attributions</a>
     </div>
     <p><strong>EduStar</strong> — Smart Learning for Africa &copy; 2026</p>
-    <p>Textbook sources: <a href="https://www.siyavula.com" target="_blank" rel="noopener">Siyavula</a> · <a
-        href="https://openstax.org" target="_blank" rel="noopener">OpenStax</a> · <a href="https://www.maktaba.org"
-        target="_blank" rel="noopener">Maktaba</a></p>
+    <p>Textbook sources: <a href="https://www.siyavula.com" target="_blank" rel="noopener">Siyavula</a> · <a href="https://openstax.org" target="_blank" rel="noopener">OpenStax</a> · <a href="https://www.maktaba.org" target="_blank" rel="noopener">Maktaba</a></p>
     <p><a href="https://youtu.be/placeholder" target="_blank" rel="noopener">📹 Project Demo Video</a></p>
   </footer>
 
