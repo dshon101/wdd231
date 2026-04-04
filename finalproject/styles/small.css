@@ -1529,9 +1529,9 @@ select option {
 
   /* Rich layered gradient: deep space feel with warm orange & teal glows */
   background:
-    radial-gradient(ellipse 70% 60% at 15% 50%, rgba(255, 107, 43, 0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 45% at 85% 60%, rgba(0, 201, 167, 0.14) 0%, transparent 55%),
-    radial-gradient(ellipse 90% 80% at 50% 0%, rgba(99, 102, 241, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 60% at 15% 50%, rgba(255, 107, 43, 0.18) 0%, transparent 5%),
+    radial-gradient(ellipse 55% 45% at 85% 60%, rgba(0, 201, 167, 0.14) 0%, transparent 5%),
+    radial-gradient(ellipse 90% 80% at 50% 0%, rgba(99, 102, 241, 0.10) 0%, transparent 6%),
     linear-gradient(160deg, #0d0d1a 0%, #121228 50%, #0a1a14 100%);
 }
 
