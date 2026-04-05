@@ -39,10 +39,10 @@ function renderCard(book) {
       <p class="book-desc">${book.description}</p>
       <div class="book-source">Source: <strong>${book.source}</strong></div>
       <div class="book-actions">
-        <button class="btn btn-sm btn-primary" onclick="openModal(${book.id})" aria-label="View details for ${book.title}">
+        <button class="es-btn es-btn-sm es-btn-primary" onclick="openModal(${book.id})" aria-label="View details for ${book.title}">
           View Details
         </button>
-        <a href="${book.url}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary" aria-label="Open ${book.title} (opens in new tab)">
+        <a href="${book.url}" target="_blank" rel="noopener noreferrer" class="es-btn es-btn-sm es-btn-secondary" aria-label="Open ${book.title} (opens in new tab)">
           Open Book ↗
         </a>
       </div>
@@ -140,7 +140,7 @@ export function openBookModal(id) {
     </div>
     <p class="modal-desc">${book.description}</p>
     <p class="modal-source">Source: <strong>${book.source}</strong></p>
-    <a href="${book.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:1.2rem; width:100%; justify-content:center;">
+    <a href="${book.url}" target="_blank" rel="noopener noreferrer" class="es-btn es-btn-primary modal-open-btn">
       📖 Open Textbook ↗
     </a>`;
 
