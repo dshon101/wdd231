@@ -156,67 +156,67 @@ body::before {
   text-decoration: none;
 }
 
-.es-btn-primary {
+.es-btn--fill {
   background: linear-gradient(135deg, var(--sun), var(--gold));
   color: white;
   box-shadow: 0 4px 20px rgba(255, 107, 43, 0.3);
 }
 
-.es-btn-primary:hover {
+.es-btn--fill:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(255, 107, 43, 0.48);
 }
 
-.es-btn-secondary {
-  background: var(--card);
-  border: 1px solid var(--border);
+.es-btn--outline {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: var(--text);
 }
 
-.es-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+.es-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
 
-.es-btn-sm {
+.es-btn--sm {
   padding: 0.5rem 1.1rem;
   font-size: 0.82rem;
 }
 
-.es-btn-white {
+.es-btn--white {
   background: white;
   color: #1a1a2e;
   font-weight: 700;
 }
 
-.es-btn-white:hover {
+.es-btn--white:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* Accessible alias used in index.html CTA */
-.es-btn-white-accessible {
+.es-btn--light {
   background: white;
   color: #1a1a2e;
   font-weight: 700;
 }
 
-.es-btn-white-accessible:hover {
+.es-btn--light:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 
 /* ── CARD ──────────────────────────────────────────────────── */
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
+.es-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
   padding: 1.4rem;
   transition: all 0.25s;
 }
 
-.card:hover {
+.es-card:hover {
   border-color: rgba(255, 107, 43, 0.35);
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -250,8 +250,8 @@ body::before {
 
 .section-label {
   display: inline-block;
-  background: rgba(255, 107, 43, 0.12);
-  border: 1px solid rgba(255, 107, 43, 0.28);
+  background: rgba(13, 13, 26, 0.85);
+  border: 1px solid rgba(255, 107, 43, 0.55);
   color: var(--sun);
   border-radius: 50px;
   padding: 0.3rem 0.9rem;
@@ -335,7 +335,7 @@ select option {
 
 
 /* ── MODAL ─────────────────────────────────────────────────── */
-.modal-backdrop {
+.es-modal-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.75);
@@ -349,12 +349,12 @@ select option {
   transition: opacity 0.25s;
 }
 
-.modal-backdrop.open {
+.es-modal-backdrop.open {
   opacity: 1;
   pointer-events: all;
 }
 
-.modal {
+.es-modal {
   background: var(--sky);
   border: 1px solid var(--border);
   border-radius: 20px;
@@ -365,11 +365,11 @@ select option {
   transition: transform 0.25s;
 }
 
-.modal-backdrop.open .modal {
+.es-modal-backdrop.open .es-modal {
   transform: translateY(0) scale(1);
 }
 
-.modal-header {
+.es-modal-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -377,16 +377,16 @@ select option {
   margin-bottom: 1.2rem;
 }
 
-.modal-title {
+.es-modal-title {
   font-family: 'Syne', sans-serif;
   font-size: 1.2rem;
   font-weight: 800;
 }
 
-.modal-close {
-  background: var(--card);
-  border: 1px solid var(--border);
-  color: var(--muted);
+.es-modal-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
   border-radius: 8px;
   width: 32px;
   height: 32px;
@@ -399,7 +399,7 @@ select option {
   transition: all 0.2s;
 }
 
-.modal-close:hover {
+.es-modal-close:hover {
   color: var(--text);
   background: rgba(255, 255, 255, 0.1);
 }
@@ -511,8 +511,8 @@ select option {
 
 .hero-tag {
   display: inline-block;
-  background: rgba(255, 107, 43, 0.12);
-  border: 1px solid rgba(255, 107, 43, 0.28);
+  background: rgba(13, 13, 26, 0.85);
+  border: 1px solid rgba(255, 107, 43, 0.55);
   color: var(--sun);
   border-radius: 50px;
   padding: 0.32rem 1rem;
@@ -585,12 +585,12 @@ select option {
 }
 
 .flag-chip {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50px;
   padding: 0.32rem 0.85rem;
   font-size: 0.78rem;
-  color: var(--muted);
+  color: var(--text);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -631,8 +631,8 @@ select option {
 }
 
 .feature-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
   padding: 1.5rem;
   transition: all 0.25s;
@@ -774,8 +774,8 @@ select option {
   gap: 0.8rem;
   align-items: center;
   padding: 0.9rem;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
   margin-bottom: 1.5rem;
 }
@@ -783,8 +783,8 @@ select option {
 .search-input {
   flex: 1;
   min-width: 180px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 0.6rem 1rem;
   color: var(--text);
@@ -792,8 +792,8 @@ select option {
 }
 
 .filter-select {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 0.6rem 1rem;
   color: var(--text);
@@ -803,8 +803,8 @@ select option {
 }
 
 .es-btn-clear {
-  background: rgba(255, 107, 43, 0.1);
-  border: 1px solid rgba(255, 107, 43, 0.3);
+  background: rgba(13, 13, 26, 0.8);
+  border: 1px solid rgba(255, 107, 43, 0.5);
   border-radius: 10px;
   padding: 0.6rem 1.2rem;
   color: var(--sun);
@@ -817,7 +817,8 @@ select option {
 }
 
 .es-btn-clear:hover {
-  background: rgba(255, 107, 43, 0.2);
+  background: rgba(255, 107, 43, 0.15);
+  border-color: rgba(255, 107, 43, 0.7);
 }
 
 .results-count {
@@ -835,8 +836,8 @@ select option {
 }
 
 .book-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
   padding: 1.4rem;
   display: flex;
@@ -894,26 +895,26 @@ select option {
   gap: 0.35rem;
 }
 
-.badge {
+.es-badge {
   padding: 0.22rem 0.6rem;
   border-radius: 50px;
   font-size: 0.7rem;
   font-weight: 600;
 }
 
-.badge-country {
+.es-badge-country {
   background: rgba(0, 201, 167, 0.1);
   color: var(--teal);
   border: 1px solid rgba(0, 201, 167, 0.25);
 }
 
-.badge-grade {
+.es-badge-grade {
   background: rgba(245, 166, 35, 0.1);
   color: var(--gold);
   border: 1px solid rgba(245, 166, 35, 0.25);
 }
 
-.badge-subject {
+.es-badge-subject {
   background: rgba(255, 107, 43, 0.1);
   color: var(--sun);
   border: 1px solid rgba(255, 107, 43, 0.25);
@@ -953,24 +954,24 @@ select option {
   border-radius: 10px;
 }
 
-.book-actions .es-btn-primary {
+.book-actions .es-btn--fill {
   background: linear-gradient(135deg, var(--sun), var(--gold));
   color: white;
   box-shadow: 0 3px 12px rgba(255, 107, 43, 0.3);
 }
 
-.book-actions .es-btn-primary:hover {
+.book-actions .es-btn--fill:hover {
   box-shadow: 0 6px 20px rgba(255, 107, 43, 0.5);
   transform: translateY(-2px);
 }
 
-.book-actions .es-btn-secondary {
+.book-actions .es-btn--outline {
   background: rgba(0, 201, 167, 0.08);
   border: 1px solid rgba(0, 201, 167, 0.3);
   color: var(--teal);
 }
 
-.book-actions .es-btn-secondary:hover {
+.book-actions .es-btn--outline:hover {
   background: rgba(0, 201, 167, 0.16);
   transform: translateY(-2px);
 }
@@ -1021,31 +1022,31 @@ select option {
   }
 }
 
-.modal-book-icon {
+.es-modal-book-icon {
   font-size: 3rem;
   margin-bottom: 0.8rem;
 }
 
-.modal-badge-row {
+.es-modal-badge-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-bottom: 1rem;
 }
 
-.modal-desc {
+.es-modal-desc {
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.7;
   margin-bottom: 0.8rem;
 }
 
-.modal-source {
+.es-modal-source {
   font-size: 0.82rem;
   color: var(--muted);
 }
 
-.modal-source strong {
+.es-modal-source strong {
   color: #a78bfa;
 }
 
@@ -1386,8 +1387,8 @@ select option {
 }
 
 .mission-stat {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius);
   padding: 1.2rem;
   text-align: center;
@@ -1515,8 +1516,8 @@ select option {
 }
 
 .source-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
   padding: 1.8rem;
   text-align: center;
@@ -1550,8 +1551,9 @@ select option {
   display: inline-block;
   margin-top: 0.8rem;
   font-size: 0.78rem;
-  color: var(--sun);
+  color: var(--teal);
   text-decoration: none;
+  font-weight: 600;
 }
 
 
@@ -1834,13 +1836,13 @@ select option {
 }
 
 /* Outline button variant (replaces inline style on back button) */
-.es-btn-outline {
+.es-btn--ghost {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: var(--text);
 }
 
-.es-btn-outline:hover {
+.es-btn--ghost:hover {
   background: var(--card);
   transform: translateY(-2px);
 }
@@ -1849,7 +1851,7 @@ select option {
 
 
 /* Modal open textbook button */
-.modal-open-btn {
+.es-modal-open-btn {
   margin-top: 1.2rem;
   width: 100%;
   justify-content: center;
@@ -1925,7 +1927,7 @@ main {
   }
 }
 
-/* Button hover lift (already exists but extend to es-btn-outline) */
+/* Button hover lift (already exists but extend to es-btn--ghost) */
 .cta-login-btn:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);

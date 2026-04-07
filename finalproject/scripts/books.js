@@ -30,19 +30,19 @@ function renderCard(book) {
         <div class="book-meta">
           <h2 class="book-title">${book.title}</h2>
           <div class="book-badges">
-            <span class="badge badge-country">${book.country}</span>
-            <span class="badge badge-grade">${book.grade}</span>
-            <span class="badge badge-subject">${book.subject}</span>
+            <span class="es-badge es-badge-country">${book.country}</span>
+            <span class="es-badge es-badge-grade">${book.grade}</span>
+            <span class="es-badge es-badge-subject">${book.subject}</span>
           </div>
         </div>
       </div>
       <p class="book-desc">${book.description}</p>
       <div class="book-source">Source: <strong>${book.source}</strong></div>
       <div class="book-actions">
-        <button class="es-btn es-btn-sm es-btn-primary" onclick="openModal(${book.id})" aria-label="View details for ${book.title}">
+        <button class="es-btn es-btn--sm es-btn--fill" onclick="openModal(${book.id})" aria-label="View details for ${book.title}">
           View Details
         </button>
-        <a href="${book.url}" target="_blank" rel="noopener noreferrer" class="es-btn es-btn-sm es-btn-secondary" aria-label="Open ${book.title} (opens in new tab)">
+        <a href="${book.url}" target="_blank" rel="noopener noreferrer" class="es-btn es-btn--sm es-btn--outline" aria-label="Open ${book.title} (opens in new tab)">
           Open Book ↗
         </a>
       </div>
@@ -132,15 +132,15 @@ export function openBookModal(id) {
   const content = document.getElementById('modal-content');
 
   content.innerHTML = `
-    <div class="modal-book-icon" aria-hidden="true">${book.icon}</div>
-    <div class="modal-badge-row">
-      <span class="badge badge-country">${book.country}</span>
-      <span class="badge badge-grade">${book.grade}</span>
-      <span class="badge badge-subject">${book.subject}</span>
+    <div class="es-modal-book-icon" aria-hidden="true">${book.icon}</div>
+    <div class="es-modal-badge-row">
+      <span class="es-badge es-badge-country">${book.country}</span>
+      <span class="es-badge es-badge-grade">${book.grade}</span>
+      <span class="es-badge es-badge-subject">${book.subject}</span>
     </div>
-    <p class="modal-desc">${book.description}</p>
-    <p class="modal-source">Source: <strong>${book.source}</strong></p>
-    <a href="${book.url}" target="_blank" rel="noopener noreferrer" class="es-btn es-btn-primary modal-open-btn">
+    <p class="es-modal-desc">${book.description}</p>
+    <p class="es-modal-source">Source: <strong>${book.source}</strong></p>
+    <a href="${book.url}" target="_blank" rel="noopener noreferrer" class="es-btn es-btn--fill modal-open-btn">
       📖 Open Textbook ↗
     </a>`;
 
